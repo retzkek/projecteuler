@@ -19,7 +19,7 @@ def fibsum(max):
     while fib1 < max:
         fibNext=fib0+fib1
         if fibNext < max and fibNext%2 == 0:
-            print fibNext
+            #print fibNext
             result += fibNext
         fib0=fib1
         fib1=fibNext

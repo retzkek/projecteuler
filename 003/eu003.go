@@ -8,19 +8,19 @@ import (
 
 // LargestPrimeFactor returns the largest prime factor of num.
 func largestPrimeFactor(num int64) int64 {
-    var result, fac int64 = 1, 2
-    for fac*fac<=num {
-        if num%fac == 0 && fac > result {
-            result=fac
-            num = num/fac
-        } else {
-            fac += 1
-        }
-    }
-    if num != 1 {
-        result = num
-    }
-    return result
+	var result, fac int64 = 1, 2
+	for fac*fac <= num {
+		if num%fac == 0 && fac > result {
+			result = fac
+			num = num / fac
+		} else {
+			fac += 1
+		}
+	}
+	if num != 1 {
+		result = num
+	}
+	return result
 }
 
 func main() {
