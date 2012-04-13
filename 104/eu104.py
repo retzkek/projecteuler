@@ -19,8 +19,30 @@ which the first nine digits are 1-9 pandigital.
 Given that Fk is the first Fibonacci number for which the first nine 
 digits AND the last nine digits are 1-9 pandigital, find k.
 """
+import operator
 
-class fib:
+class ArrayInt:
+    def __init__(self,val=0,ndigits=9):
+        self.ndigits = ndigits
+        self.n = [0]*ndigits
+        if val > 0:
+            self.setValue(val)
+    def setValue(self,val):
+        self.n = [int(n) for n in str(val)[-self.ndigits:]]
+        if len(self.n) < self.ndigits:
+            self.n = [0]*(self.ndigits-len(self.n)) + self.n
+    def __add__(self,other):
+        new = ArrayInt(self.ndigits)
+        new.n = map(operator.add,self.n,other.n)
+        for i in range(self.ndigits-1,-1,-1):
+            nn = new.n[i]
+            if nn > 9:
+                new.n[i] = nn%10
+                if i > 0:
+                    new.n[i-1]+=nn/10
+        return new
+
+class Fib:
     def __init__(self):
         self.nMinus2 = 1
         self.nMinus1 = 1
@@ -32,38 +54,27 @@ class fib:
         self.k += 1
         return nextn
 
-def isPandigital(numstr):
-    """
-    Checks if 9-digit number (passed as string) is 1-9 pandigital.
-    """
-    numset = set(numstr)
-    testset = set("123456789")
-    return len(numstr) == 9 and numset==testset
-        
+class FibArrayInt:
+    def __init__(self):
+        self.nMinus2 = ArrayInt(1)
+        self.nMinus1 = ArrayInt(1)
+        self.k = 2
+    def nextn(self):
+        nextn = self.nMinus2+self.nMinus1
+        self.nMinus2 = self.nMinus1
+        self.nMinus1 = nextn
+        self.k += 1
+        return nextn
 
 if __name__ == "__main__":
-    ns = fib()
-    shouldTest = False
+    ns = Fib()
+    nsarray = FibArrayInt()
+    pandigital = set(range(1,10))
     while True:
-        nstr = str(ns.nextn())
-        if ns.k == 541:
-            print "Test: F541 - Last nine digits are 1-9 pandigital: ",
-            if isPandigital(nstr[-9:]):
-                print "Pass"
-            else:
-                print "Fail"
-                print nstr
+        last9set = set(nsarray.nextn().n)
+        n = ns.nextn()
+        if 0 not in last9set and last9set == pandigital:
+            print ns.k
+            first9set=set([int(a) for a in str(n)[0:9]])
+            if first9set==pandigital:
                 break
-        elif ns.k == 2749:
-            print "Test: F2749 - First nine digits are 1-9 pandigital: ",
-            if isPandigital(nstr[0:9]):
-                print "Pass"
-            else:
-                print "Fail"
-                print nstr
-                break
-            shouldTest = True
-        elif shouldTest and isPandigital(nstr[-9]) and isPandigital(nstr[0:9]):
-            print "Challenge: k=%i" % ns.k
-            print nstr
-            break
