@@ -53,22 +53,26 @@ def main(argv=None):
     for line in f:
         triangle.append(map(int, line.split()))
     size = len(triangle)
-    # starting from each element in the last row, find the best route to the
-    # top by picking the max of the two items above (one if we're on the edge)
-    best = 0
-    for i in range(size):
-        path = 0
-        ii = i
-        for j in range(size-1,-1,-1):
-            path += triangle[j][ii]
-            if ii > 0 and ii < j-1:
-                if triangle[j-1][ii-1] > triangle[j-1][ii]:
-                    ii = ii-1
-            elif ii > 0:
-                ii = ii-1
-        if path > best:
-            best = path
-    print best
+    # collapse the triangle down by picking the best choice in the last row
+    # for each element in the penultimate row and sum.  rinse and repeat.
+    # example:
+    #       03
+    #     07  05
+    #   02  04  06
+    # 08  05  09  03
+    #
+    #     03
+    #   07  05
+    # 10  13  15
+    #
+    #   03
+    # 20  20
+    #
+    # 23
+    for row in range(size-2, -1, -1):
+        for col in range(row+1):
+            triangle[row][col] += max(triangle[row+1][col], triangle[row+1][col+1])
+    print triangle[0][0]
             
 
 
