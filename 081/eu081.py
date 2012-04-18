@@ -34,31 +34,21 @@ def matrix(filename):
         if len(row) != dim:
             print "error: matrix not square"
             return None
-    array2=copy.deepcopy(array)
     #for row in array:
     #    print row
     #print
-    for i in xrange(dim-1,0,-1):
-        # corner
-        array2[i-1][i-1]+=array2[i][i]+min(array[i-1][i],array[i][i-1])
-        # bottom row
-        for j in xrange(i-1):
-            array2[i-1][j]+=sum(array[i][j:i])+array2[i][i]
-        # right column
-        tot=array2[i][i]+array[i-1][i]
-        for j in xrange(i-2,-1,-1):
-            tot+=array[j][i]
-            array2[j][i-1]+=tot
-        del array2[i]
-        for row in array2:
-            del row[i]
-        #for row in array2:
-        #    print row
-        #print
-    return array2[0][0]
-            
-
-        
+    # bottom row
+    for i in xrange(dim-2,-1,-1):
+        array[dim-1][i]+=array[dim-1][i+1]
+    # right column
+    for j in xrange(dim-2,-1,-1):
+        array[j][dim-1]+=array[j+1][dim-1]
+    # work bottom to top, right to left, adding the min of the
+    # cell to the right and the cell below
+    for j in xrange(dim-2,-1,-1):
+        for i in xrange(dim-2,-1,-1):
+            array[j][i]+=min(array[j+1][i],array[j][i+1])
+    return array[0][0]
          
 if __name__ == "__main__":
     import sys
