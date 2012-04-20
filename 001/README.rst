@@ -6,21 +6,23 @@ Find the sum of all the multiples of 3 or 5 below 1000
 
 Python (Python 2.7.2)
 ---------------------
-> time python eu001.py
-Test: pass
-Result: 233168
-
-real    0m0.056s
-user    0m0.020s
-sys     0m0.000s
+::
+    > time python eu001.py
+    Test: pass
+    Result: 233168
+    
+    real    0m0.056s
+    user    0m0.020s
+    sys     0m0.000s
 
 Go (go1)
 --------
-> time go run eu001.go
-Test: pass
-Result: 233168
-
-real    0m0.225s
-user    0m0.164s
-sys     0m0.032s
+::
+   > time go run eu001.go
+    Test: pass
+    Result: 233168
+    
+    real    0m0.225s
+    user    0m0.164s
+    sys     0m0.032s
 
