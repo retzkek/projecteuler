@@ -7,6 +7,7 @@ Find the sum of all the multiples of 3 or 5 below 1000
 Python (Python 2.7.2)
 ---------------------
 ::
+
     > time python eu001.py
     Test: pass
     Result: 233168
@@ -18,6 +19,7 @@ Python (Python 2.7.2)
 Go (go1)
 --------
 ::
+
    > time go run eu001.go
     Test: pass
     Result: 233168
