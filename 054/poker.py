@@ -86,8 +86,7 @@ class hand:
         trips = self.sets(3)
         quads = self.sets(4)
         values = self._valueList()
-        values.sort()
-        values.reverse()
+        values.sort(reverse=True)
         valueset = set(values)
         if straight and flush:
             # STRAIGHTFLUSH
@@ -109,19 +108,20 @@ class hand:
             # TRIPS
             valueset.remove(trips[0])
             values = list(valueset)
-            values.sort()
-            values.reverse()
+            values.sort(reverse=True)
             return (3,trips+values)
         elif len(pairs) > 1:
             # TWOPAIR
             valueset.remove(pairs[0])
             valueset.remove(pairs[1])
             values = list(valueset)
+            pairs.sort(reverse=True)
             return (2,pairs+values)
         elif len(pairs) > 0:
             # PAIR
             valueset.remove(pairs[0])
             values = list(valueset)
+            values.sort(reverse=True)
             return (1,pairs+values)
         else:
             # HIGH
