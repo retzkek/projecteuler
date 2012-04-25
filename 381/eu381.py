@@ -20,15 +20,43 @@ Find ∑S(p) for 5 ≤ p < 10^8.
 import math
 
 def s(p):
-    a=math.factorial(p-5)*(pow(p,4)-9*pow(p,3)+27*p*p-30*p+9)
+    # literal implementation; impractical for large p
+    a = 0
+    for k in range(1,6):
+        a += math.factorial(p-k)
     return a%p
 
 def s1(p):
+    # simplified to one factorial; still impractical for large p
     a=math.factorial(p-5)*9
     return a%p
 
 def s2(p):
-    a=9*((p-1)-24)
+    # same as above, but only keep mod p residual
+    a=1
+    for i in xrange(2,p-4):
+        a *= i
+        a = a%p
+    return (9*a)%p
+
+def s3(p):
+    # simplified via Wilson's Theorem
+    # (p-1)! = p-1 (mod p)
+    # (p-2)! = 1 (mod p)
+    # (p-3)! = (p-1)/2 (mod p)
+    # unclear how the following two work when result is not an integer
+    # determined formula for those cases via observation
+    # (p-4)! = (p+1)/6 (mod p)
+    # (p-5)! = (p-1)/24 (mod p)
+    a = (p-1) + (p+1) + (p-1)/2
+    if (p+1)%6 == 0:
+        a += (p+1)/6
+    else:
+        a += (5*p+1)/6
+    if (p-1)%24 == 0:
+        a += (p-1)/24
+    else:
+        a += ((p*p-1)/24)%p
     return a%p
 
 class primes:
@@ -69,6 +97,10 @@ class primes:
 if __name__ == '__main__':
     p = primes()
     tot = 0
-    while p.next() < 100:
-        tot += s2(p.lastPrime)
+    #i = 0
+    while p.next() < 1e8:
+        tot += s3(p.lastPrime)
+        #if i%10000 == 0:
+        #    print i,p.lastPrime,tot
+        #i += 1
     print tot
