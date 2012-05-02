@@ -9,41 +9,6 @@ inefficient solution, max found so far:
 """
 import math
 
-class primes:
-    """
-    Calculates prime numbers sequentially.
-
-    METHODS
-
-    next()      returns the next prime
-    """
-    def __init__(self):
-        self.primes = [2,3]
-        self.primeset = set(self.primes)
-        self.lastPrime = 3
-    def next(self):
-        """
-        calculate and return next prime
-        """
-        nextPrime = None
-        i = self.lastPrime+2
-        while nextPrime is None:
-            sqrt_i = math.sqrt(i)
-            isPrime = True
-            for p in self.primes:
-                if i%p == 0:
-                    isPrime = False
-                    i += 2
-                    break
-                if p > sqrt_i:
-                    break
-            if isPrime:
-                nextPrime = i
-        self.primes.append(nextPrime)
-        self.primeset.add(nextPrime)
-        self.lastPrime = nextPrime
-        return nextPrime
-
 def gcd(n,m):
     """
     Calculate greatest common divisor of n and m using the 
@@ -61,21 +26,16 @@ def gcd(n,m):
 
 def phi(n):
     result = 0
-    for k in xrange(1,n):
+    for k in xrange(1,n,2):
         if gcd(k,n) == 1:
             result += 1
     return result
 
 if __name__ == '__main__':
-    assert map(phi, range(2,11)) == [1,2,2,4,2,6,4,6,4]
-    #p = primes()
-    #while p.lastPrime < 100000:
-    #    p.next()
+    #assert map(phi, range(2,11)) == [1,2,2,4,2,6,4,6,4]
     result = 0
     maxnphin = 0
-    for n in xrange(100,1000000,100):
-        #if n in p.primeset:
-        #    continue
+    for n in xrange(2,10000,2):
         phin = phi(n)
         if phin > 0:
             nphin = float(n)/phin
