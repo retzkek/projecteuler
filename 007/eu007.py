@@ -1,12 +1,8 @@
 #!/usr/bin/python
 # encoding: utf-8
 """
-project euler (projecteuler.net) problem 7:
+project euler (projecteuler.net) problem 7
 solution by Kevin Retzke (retzkek@gmail.com), April 2009
-
-By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6^(th) prime is 13.
-
-What is the 10001^(st) prime number?
 """
 
 class primes:
