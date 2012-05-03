@@ -50,30 +50,30 @@ func main() {
 	for p.Last*p.Last < 50e6 {
 		p.Next()
 	}
-    p2 := make([]int, len(p.Primes))
-    p3 := make([]int, len(p.Primes))
-    p4 := make([]int, len(p.Primes))
-    for i,p := range p.Primes {
-        p2[i] = p*p
-        p3[i] = p2[i]*p
-        p4[i] = p3[i]*p
-    }
-    sumset := make(map[int] bool)
-    for _,a := range p2 {
-        for _,b := range p3 {
-            if b > 50e6 {
-                break
-            }
-            for _,c := range p4 {
-                if c > 50e6 {
-                    break
-                }
-                sum := a+b+c
-                if sum < 50e6 {
-                    sumset[sum] = true
-                }
-            }
-        }
-    }
+	p2 := make([]int, len(p.Primes))
+	p3 := make([]int, len(p.Primes))
+	p4 := make([]int, len(p.Primes))
+	for i, p := range p.Primes {
+		p2[i] = p * p
+		p3[i] = p2[i] * p
+		p4[i] = p3[i] * p
+	}
+	sumset := make(map[int]bool)
+	for _, a := range p2 {
+		for _, b := range p3 {
+			if b > 50e6 {
+				break
+			}
+			for _, c := range p4 {
+				if c > 50e6 {
+					break
+				}
+				sum := a + b + c
+				if sum < 50e6 {
+					sumset[sum] = true
+				}
+			}
+		}
+	}
 	fmt.Println(len(sumset))
 }
