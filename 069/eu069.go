@@ -50,19 +50,19 @@ func main() {
 	for p.Last < 1e6 {
 		p.Next()
 	}
-    maxn := 0
-    maxnphin := float64(0)
-    for n := 2; n <= 1000000; n+=2 {
-        phi := float64(n)
-        for _,m := range p.Primes {
-            if n%m == 0 {
-                phi *= (1-1/float64(m))
-            }
-        }
-        if nphin := float64(n)/phi; nphin > maxnphin {
-            maxn = n
-            maxnphin = nphin
-            fmt.Println(maxn, maxnphin)
-        }
-    }
+	maxn := 0
+	maxnphin := float64(0)
+	for n := 2; n <= 1000000; n += 2 {
+		phi := float64(n)
+		for _, m := range p.Primes {
+			if n%m == 0 {
+				phi *= (1 - 1/float64(m))
+			}
+		}
+		if nphin := float64(n) / phi; nphin > maxnphin {
+			maxn = n
+			maxnphin = nphin
+			fmt.Println(maxn, maxnphin)
+		}
+	}
 }
