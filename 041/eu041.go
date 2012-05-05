@@ -3,8 +3,8 @@
 package main
 
 import (
-    "fmt"
-    "math"
+	"fmt"
+	"math"
 )
 
 // Primes is a type for containing a list of primes.
@@ -49,58 +49,58 @@ func (p *Primes) Next() int {
 // Eratosthenes populates p with all primes up to max, computed with
 // the Sieve of Eratosthenes.
 func (p *Primes) Eratosthenes(max int) {
-    sieve := make([]bool, max)
-    for i := 2; i*i < max; i++ {
-        if !sieve[i] {
-            for j := 2*i; j < max; j += i {
-                sieve[j] = true
-            }
-        }
-    }
+	sieve := make([]bool, max)
+	for i := 2; i*i < max; i++ {
+		if !sieve[i] {
+			for j := 2 * i; j < max; j += i {
+				sieve[j] = true
+			}
+		}
+	}
 	p.Primes = []int{2}
-    for i := 3; i < max; i++ {
-        if !sieve[i] {
-            p.Last = i
-            p.Primes = append(p.Primes, p.Last)
-        }
-    }
+	for i := 3; i < max; i++ {
+		if !sieve[i] {
+			p.Last = i
+			p.Primes = append(p.Primes, p.Last)
+		}
+	}
 }
 
 func IsPandigital(n int) bool {
-    // determine order of magnitude of n
-    mag := 0
-    for nn := n; nn > 0; nn = nn/10 {
-        mag++
-    }
-    // find digits in n
-    digits := make([]bool,mag)
-    for nn := n; nn > 0; nn = nn/10 {
-        i := nn%10-1
-        if i == -1 {
-            return false
-        }
-        if i < mag && !digits[i] {
-            digits[i] = true
-        }
-    }
-    // see if all digits 1:len(n) are in n
-    for _,d := range digits {
-        if !d {
-            return false
-        }
-    }
-    return true
+	// determine order of magnitude of n
+	mag := 0
+	for nn := n; nn > 0; nn = nn / 10 {
+		mag++
+	}
+	// find digits in n
+	digits := make([]bool, mag)
+	for nn := n; nn > 0; nn = nn / 10 {
+		i := nn%10 - 1
+		if i == -1 {
+			return false
+		}
+		if i < mag && !digits[i] {
+			digits[i] = true
+		}
+	}
+	// see if all digits 1:len(n) are in n
+	for _, d := range digits {
+		if !d {
+			return false
+		}
+	}
+	return true
 }
 
 func main() {
-    primes := new(Primes)
-    primes.Eratosthenes(987654321)
-    max := 0
-    for _,p := range primes.Primes {
-        if IsPandigital(p) {
-            //fmt.Println(p)
-            max = p
-        }
-    }
-    fmt.Println(max)
+	primes := new(Primes)
+	primes.Eratosthenes(987654321)
+	max := 0
+	for _, p := range primes.Primes {
+		if IsPandigital(p) {
+			//fmt.Println(p)
+			max = p
+		}
+	}
+	fmt.Println(max)
 }
