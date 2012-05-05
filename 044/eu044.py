@@ -10,12 +10,12 @@ def pentagonal(n):
 
 if __name__ == "__main__":
     ps = []
-    for i in xrange(1,100000):
+    for i in xrange(1,10000):
         ps.append(pentagonal(i))
     pset = set(ps)
     for i in range(len(ps)):
         for j in range(i,len(ps)):
             m = ps[i]
             n = ps[j]
-            if n != m and (m+n) in pset and (m-n) in pset:
-                print m, n, abs(m-n)
+            if n != m and (m+n) in pset and (n-m) in pset:
+                print m, n, n-m
