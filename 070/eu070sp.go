@@ -94,18 +94,18 @@ func main() {
     primes.Eratosthenes(maxn)
     minn := 0
     minnphin := float64(9999999)
+    var phi float64
     for i,p := range primes.Primes {
         for j := i; j < len(primes.Primes); j++ {
             q := primes.Primes[j]
             n := p*q
-            phi := float64(n)
-            for _, m := range primes.Primes {
-                if m > n {
-                    break
-                }
-                if n%m == 0 {
-                    phi *= (1 - 1/float64(m))
-                }
+            if n > maxn {
+                break
+            }
+            if p == q {
+                phi = float64(n-p)
+            } else {
+                phi = float64(n-(p+q)+1)
             }
             if nphin := float64(n) / phi; nphin < minnphin && 
                 arePermutations(n,int(phi)) {

@@ -88,30 +88,42 @@ func arePermutations(n, m int) bool {
     return true
 }
 
+type Result struct {
+    N int
+    Phi float64
+    NOverPhi float64
+}
+
 func main() {
-    const maxn = 10000000
-    primes := new(Primes)
-    primes.Eratosthenes(maxn)
-    minn := 0
-    minnphin := float64(9999999)
-    for i,p := range primes.Primes {
-        for j := i; j < len(primes.Primes); j++ {
-            q := primes.Primes[j]
-            n := p*q
-            phi := float64(n)
-            for _, m := range primes.Primes {
-                if m > n {
-                    break
+    const MAXN = 10000000
+    const NCPU = 4
+    p := new(Primes)
+    p.Eratosthenes(MAXN)
+    result := Result{0,0.0,999999.0}
+    c := make(chan Result)
+    //for _,n := range p.Primes {
+    for n := 3; n <= MAXN; n += 2*NCPU {
+        for nn := n; nn < n+2*NCPU; nn += 2 {
+            go func() {
+                r := Result{nn, float64(nn), 1.0}
+                for _, m := range p.Primes {
+                    if m > nn {
+                        break
+                    }
+                    if nn%m == 0 {
+                        r.Phi *= (1 - 1/float64(m))
+                    }
                 }
-                if n%m == 0 {
-                    phi *= (1 - 1/float64(m))
-                }
-            }
-            if nphin := float64(n) / phi; nphin < minnphin && 
-                arePermutations(n,int(phi)) {
-                minn = n
-                minnphin = nphin
-                fmt.Println(minn,int(phi), minnphin)
+                r.NOverPhi = float64(nn)/r.Phi
+                c <- r
+            }()
+        }
+        for i := 0; i < NCPU; i++ {
+            r := <- c
+            if r.NOverPhi < result.NOverPhi && 
+                arePermutations(r.N,int(r.Phi)) {
+                result = r
+                fmt.Println(result.N,int(result.Phi), result.NOverPhi)
             }
         }
     }
