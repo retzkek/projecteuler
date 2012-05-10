@@ -12,7 +12,7 @@ import (
 func sumDice(ndice, nsides int) int {
 	sum := 0
 	for d := 0; d < ndice; d++ {
-		sum += rand.Intn(nsides)+1
+		sum += rand.Intn(nsides) + 1
 	}
 	return sum
 }
@@ -20,7 +20,7 @@ func sumDice(ndice, nsides int) int {
 func runTrials(nTrials int, c chan int) {
 	wins := 0
 	for i := 0; i < nTrials; i++ {
-		if sumDice(9, 4) > sumDice(6,6) {
+		if sumDice(9, 4) > sumDice(6, 6) {
 			wins++
 		}
 	}
@@ -39,13 +39,13 @@ func main() {
 	for math.Abs(pct-lastPct) > EPS {
 		i++
 		for j := 0; j < NPROC; j++ {
-			go runTrials(TRIALS,c)
+			go runTrials(TRIALS, c)
 		}
 		for j := 0; j < NPROC; j++ {
 			sum += float64(<-c)
 		}
 		lastPct = pct
-		pct = sum/(NPROC*TRIALS*float64(i))
+		pct = sum / (NPROC * TRIALS * float64(i))
 	}
 	fmt.Println(pct)
 }

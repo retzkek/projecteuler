@@ -4,6 +4,7 @@ package main
 
 import (
 	"fmt"
+	"math"
 )
 
 func rolls(ndice, nsides int) map[int]int {
@@ -12,7 +13,7 @@ func rolls(ndice, nsides int) map[int]int {
 		if ndice == 1 {
 			rs[i] = 1
 		} else {
-			for j,n := range rolls(ndice-1,nsides) {
+			for j, n := range rolls(ndice-1, nsides) {
 				rs[i+j] += n
 			}
 		}
@@ -21,11 +22,20 @@ func rolls(ndice, nsides int) map[int]int {
 }
 
 func main() {
-	total := 0
-	for i, n := range rolls(6,6) {
-		fmt.Printf("%v: %v\n",i,n)
-		total += n
+	ptotal := math.Pow(4, 9)
+	ctotal := math.Pow(6, 6)
+	prolls := rolls(9, 4)
+	crolls := rolls(6, 6)
+	prob := 0.0
+	for i, n := range prolls {
+		ctot := 0
+		for j, m := range crolls {
+			if j < i {
+				ctot += m
+			}
+		}
+		prob += float64(n) * float64(ctot)
 	}
-	fmt.Println(total)
-	//fmt.Println(rolls(9,4))
+	prob /= (ctotal * ptotal)
+	fmt.Printf("%9.7f\n", prob)
 }
