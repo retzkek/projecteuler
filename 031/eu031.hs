@@ -6,11 +6,10 @@ main = do
 
 count :: [Int] -> Int -> Int
 
+count [] 0 = 1
+count [] _ = 0
 count (x:xs) total 
     | x <= total = a+b
     | otherwise  = b
     where a = count (x:xs) (total-x)
           b = count xs total
-count [] 0 = 1
-count [] _ = 0
-
