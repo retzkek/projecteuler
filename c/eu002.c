@@ -37,4 +37,5 @@ int main()
 	// challenge
 	r = fibsum(4e6);
 	printf("result: %d\n", r);
+	return 0;
 }
