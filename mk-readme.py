@@ -42,6 +42,7 @@ def write_readme(problems):
 	print header
 	# count by language
 	print 'Number of problems solved by language:'
+	print
 	lcount = {}
 	for l in lsort:
 		count = 0
@@ -56,6 +57,7 @@ def write_readme(problems):
 	print
 	# full table
 	print 'Full list of problem/language:'
+	print
 	# table header
 	for i in range(len(langs)+1):
 		print '======= ',
