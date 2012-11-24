@@ -4,10 +4,10 @@ solutions by Kevin Retzke (retzkek@gmail.com).
 =======  =======  =======  =======  =======  =======  =======  =======  ======= 
 Problem        C  Clojure   Erlang  Fortran       Go  Haskell   Python   Scheme 
 =======  =======  =======  =======  =======  =======  =======  =======  ======= 
-    001                                           X                 X        X 
-    002                                           X                 X          
-    003                                           X                 X          
-    004                                           X                 X          
+    001       X        X                          X                 X        X 
+    002       X        X                          X                 X          
+    003       X                                   X                 X          
+    004       X                                   X                 X          
     005                                           X                 X          
     006                                           X                 X          
     007                                           X                 X          

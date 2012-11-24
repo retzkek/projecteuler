@@ -13,7 +13,7 @@ solutions by Kevin Retzke (retzkek@gmail.com).
 footer = """
 """
 
-subdirs = ['c','go','misc','python']
+subdirs = ['c','go','misc','python','clojure']
 #        ext  : language
 langs = {'c'  : 'C', 
          'go' : 'Go',
