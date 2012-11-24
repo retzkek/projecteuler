@@ -1,6 +1,19 @@
 Collection of Project Euler (http://www.projecteuler.net) 
 solutions by Kevin Retzke (retzkek@gmail.com).
 
+Number of problems solved by language:
+======== =====
+  Python    83
+      Go    22
+       C     8
+ Clojure     3
+ Fortran     2
+  Scheme     2
+  Erlang     1
+ Haskell     1
+======== =====
+
+Full list of problem/language:
 =======  =======  =======  =======  =======  =======  =======  =======  ======= 
 Problem        C  Clojure   Erlang  Fortran       Go  Haskell   Python   Scheme 
 =======  =======  =======  =======  =======  =======  =======  =======  ======= 

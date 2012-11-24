@@ -37,13 +37,29 @@ def parse_filename(f):
 	return (problem, langs[extension])
 
 def write_readme(problems):
+	lsort = sorted(langs.values())
 	# header
 	print header
+	# count by language
+	print 'Number of problems solved by language:'
+	lcount = {}
+	for l in lsort:
+		count = 0
+		for p,ls in problems.iteritems():
+			if l in ls:
+				count += 1
+		lcount[l]=count
+	print '======== ====='
+	for l in sorted(lcount, key=lcount.get, reverse=True):
+		print '%8s %5d' % (l, lcount[l])
+	print '======== ====='
+	print
+	# full table
+	print 'Full list of problem/language:'
 	# table header
 	for i in range(len(langs)+1):
 		print '======= ',
 	print
-	lsort = sorted(langs.values())
 	print 'Problem ',
 	for l in lsort:
 		print '%7s ' % l,
