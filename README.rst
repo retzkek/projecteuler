@@ -4,7 +4,8 @@ solutions by Kevin Retzke (retzkek@gmail.com).
 Number of problems solved by language:
 
 ======== =====
-  Python    83
+======== =====
+Python    83
       Go    22
        C     8
  Clojure     3
