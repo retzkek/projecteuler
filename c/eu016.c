@@ -14,7 +14,7 @@ int sumDigitsPow(unsigned long base, unsigned long exp)
 {
 	mpz_t n;
 	char *digits;
-	char digit;
+	char digit[] = "x";
 	int sum;
 
 	mpz_init(n);
@@ -22,8 +22,8 @@ int sumDigitsPow(unsigned long base, unsigned long exp)
 	digits = mpz_get_str(NULL,10,n);
 	sum = 0;
 	for (int i=0; i < strlen(digits); i++) {
-		digit = digits[i];
-		sum += atoi(&digit);
+		digit[0] = digits[i];
+		sum += atoi(digit);
 	}
 	free(digits);
 	mpz_clear(n);
