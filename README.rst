@@ -5,8 +5,8 @@ Number of problems solved by language:
 
 ======== =====
   Python    83
-      Go    22
-       C    20
+      Go    23
+       C    22
  Clojure     4
  Fortran     2
   Scheme     2
@@ -36,7 +36,7 @@ Problem        C  Clojure   Erlang  Fortran       Go  Haskell   Python   Scheme
     015       X                                                     X          
     016       X                                                     X          
     017       X                                                     X          
-    018                                           X                 X          
+    018       X                                   X                 X          
     019                                                             X          
     020                                                             X          
     021                                                             X          
@@ -80,7 +80,7 @@ Problem        C  Clojure   Erlang  Fortran       Go  Haskell   Python   Scheme
     063                                                             X          
     065                                                             X          
     066                                           X                 X          
-    067                                                             X          
+    067       X                                   X                 X          
     069                                           X                 X          
     070                                           X                 X          
     075                                                             X          
