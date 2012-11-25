@@ -7,9 +7,13 @@
 
 int projectEuler(bool (*test)(), void (*run)())
 {
-	if (!test()) {
-		printf("test failed\n");
-		return 1;
+	if (test == NULL) {
+		printf("no test\n");
+	} else {
+		if (!test()) {
+			printf("test failed\n");
+			return 1;
+		}
 	}
 	run();
 	return 0;
