@@ -1,6 +1,6 @@
 cc= gcc
 #cc= clang
-copts=-Wall -pedantic -std=c99 -g
+copts=-Wall -pedantic -std=gnu1x -g
 
 eu004: eu004.c pe.h
 	$(cc) $< $(copts) -lm -o $@.bin
