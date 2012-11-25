@@ -11,5 +11,8 @@ eu010: eu010.c pe.h primes.h
 eu015: eu015.c pe.h
 	$(cc) $< $(copts) -lgmp -o $@.bin
 
+eu016: eu016.c pe.h
+	$(cc) $< $(copts) -lgmp -o $@.bin
+
 %: %.c pe.h
 	$(cc) $< $(copts) -o $@.bin
