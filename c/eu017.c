@@ -11,14 +11,13 @@
 
 #include "pe.h"
 
-static char *digits[] = {"zero","one","two","three","four","five",
-	"six","seven","eight","nine","ten","eleven","twelve","thirteen","fourteen",
-	"fifteen","sixteen","seventeen","eighteen","nineteen"};
-static char *tens[] = {"zero","ten","twenty","thirty","forty",
-	"fifty","sixty","seventy","eighty","ninety"};
-
 char *numToWords(unsigned int num)
 {
+	static char *digits[] = {"zero","one","two","three","four","five",
+		"six","seven","eight","nine","ten","eleven","twelve","thirteen",
+		"fourteen","fifteen","sixteen","seventeen","eighteen","nineteen"};
+	static char *tens[] = {"zero","ten","twenty","thirty","forty",
+		"fifty","sixty","seventy","eighty","ninety"};
 	char *str0, *str1, *str2;
 	if (num < 20) {
 		asprintf(&str0,"%s",digits[num]);
