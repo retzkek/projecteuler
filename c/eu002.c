@@ -2,6 +2,9 @@
 // solution by Kevin Retzke (retzkek@gmail.com) November 2012
 
 #include <stdio.h>
+#include <stdbool.h>
+
+#include "pe.h"
 
 // Fibsum computes the sum of all even-valued members of the Fibonacci
 // sequence below max.
@@ -23,19 +26,17 @@ int fibsum(int max)
 	return result;
 }
 
+bool test()
+{
+	return (fibsum(90) == 44);
+}
+
+void run()
+{
+	printf("%d\n", fibsum(4e6));
+}
+
 int main() 
 {
-	int r;
-	// test case
-	r = fibsum(90);
-	if (r == 44) {
-		printf("test: pass\n");
-	} else {
-		printf("test: fail (r=%d)\n", r);
-		return 1;
-	}
-	// challenge
-	r = fibsum(4e6);
-	printf("result: %d\n", r);
-	return 0;
+	return projectEuler(test, run);
 }

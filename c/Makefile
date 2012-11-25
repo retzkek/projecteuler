@@ -1,6 +1,7 @@
 cc= gcc
-copts=-Wall -pedantic -std=c99
+#cc= clang
+copts=-Wall -pedantic -std=c99 -g
 
 %.bin: %.c
-	$(cc) $(copts) $< -lm -o $@
+	$(cc) $< $(copts) -lm -o $@
 

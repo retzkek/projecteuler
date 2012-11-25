@@ -4,6 +4,8 @@
 #include <stdio.h>
 #include <stdbool.h>
 
+#include "pe.h"
+
 // Calculates the smallest number that is evenly divisible by all 
 // integers from 1 to max (inclusive).
 int smallestDivisibleBy(int max)
@@ -26,19 +28,17 @@ int smallestDivisibleBy(int max)
 	return i;
 }
 
+bool test()
+{
+	return (smallestDivisibleBy(10) == 2520);
+}
+
+void run()
+{
+	printf("%d\n", smallestDivisibleBy(20));
+}
+
 int main()
 {
-	int r;
-	// test case
-	r = smallestDivisibleBy(10);
-	if (r == 2520) {
-		printf("test: pass\n");
-	} else {
-		printf("ttst: fail (result = %d)\n", r);
-		return 1;
-	}
-	// challenge
-	r = smallestDivisibleBy(20);
-	printf("result: %d\n", r);
-	return 0;
+	return projectEuler(test, run);
 }

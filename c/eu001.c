@@ -2,6 +2,9 @@
 // solution by Kevin Retzke (retzkek@gmail.com) Novemeber 2012
 
 #include <stdio.h>
+#include <stdbool.h>
+
+#include "pe.h"
 
 int natMult3or5(int max) 
 {
@@ -12,20 +15,18 @@ int natMult3or5(int max)
 	return result;
 }
 
-int main() 
+bool test()
 {
-	int r;
-	// test
-	r = natMult3or5(10);
-	if (r == 23) {
-		printf("Test: pass\n");
-	} else {
-		printf("test: fail (r=%d)\n",r);
-		return 1;
-	}
-	// challenge
-	r = natMult3or5(1000);
-	printf("result: %d\n",r);
-	return 0;
+	return (natMult3or5(10) == 23);
+}
+
+void run()
+{
+	printf("%d\n",natMult3or5(1000));
+}
+
+int main()
+{
+	return projectEuler(test, run);
 }
 

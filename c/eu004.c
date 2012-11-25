@@ -6,6 +6,8 @@
 #include <math.h>
 #include <stdbool.h>
 
+#include "pe.h"
+
 // IsPalindrome returns true if num is palindromic.
 bool isPalindrome(int num)
 {
@@ -16,9 +18,11 @@ bool isPalindrome(int num)
 	strLen = snprintf(str, strMaxLen, "%d", num);
 	for (int i = 0; i < (int)strLen/2; i++) {
 		if (str[i] != str[strLen-i-1]) {
+			free(str);
 			return false;
 		}
 	}
+	free(str);
 	return true;
 }
 
@@ -40,19 +44,17 @@ int palindrome(int digits)
 	return largest;
 }
 
+bool test()
+{
+	return (palindrome(2) == 9009);
+}
+
+void run()
+{
+	printf("%d\n", palindrome(3));
+}
+
 int main()
 {
-	int r;
-	// test case
-	r = palindrome(2); 
-	if (r == 9009) {
-		printf("test: pass\n");
-	} else {
-		printf("test: fail (r=%d)\n", r);
-		return 1;
-	}
-	// challenge
-	r = palindrome(3);
-	printf("result: %d\n", r);
-	return 0;
+	return projectEuler(test,run);
 }

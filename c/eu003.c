@@ -2,6 +2,9 @@
 // solution by Kevin Retzke (retzkek@gmail.com) November 2012
 
 #include <stdio.h>
+#include <stdbool.h>
+
+#include "pe.h"
 
 // LargestPrimeFactor returns the largest prime factor of num.
 unsigned long largestPrimeFactor(unsigned long num)
@@ -23,19 +26,17 @@ unsigned long largestPrimeFactor(unsigned long num)
 	return result;
 }
 
+bool test()
+{
+	return (largestPrimeFactor(13195) == 29);
+}
+
+void run()
+{
+	printf("%lu\n", largestPrimeFactor(600851475143));
+}
+
 int main()
 {
-	unsigned long r;
-	// test case
-	r = largestPrimeFactor(13195);
-	if (r == 29) {
-		printf("test: pass\n");
-	} else {
-		printf("test: fail (r=%lu)\n", r);
-		return 1;
-	}
-	// challenge
-	r = largestPrimeFactor(600851475143);
-	printf("result: %lu\n", r);
-	return 0;
+	return projectEuler(test, run);
 }

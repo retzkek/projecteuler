@@ -2,6 +2,9 @@
 // solution by Kevin Retzke (retzkek@gmail.com), November 2009
 
 #include <stdio.h>
+#include <stdbool.h>
+
+#include "pe.h"
 
 // SumOfSquares calculates the sum of the squares for all natural 
 // numbers from 1 to max.
@@ -25,19 +28,17 @@ long SquareOfSum(int max)
 	return sum * sum;
 }
 
+bool test()
+{
+	return (SquareOfSum(10) - SumOfSquares(10) == 2640);
+}
+
+void run()
+{
+	printf("%ld\n", SquareOfSum(100) - SumOfSquares(100));
+}
+
 int main()
 {
-	long r;
-	// test case
-	r = SquareOfSum(10) - SumOfSquares(10);
-	if (r == 2640) {
-		printf("test: pass\n");
-	} else {
-		printf("test: fail (result = %ld)\n", r);
-		return 1;
-	}
-	// challenge
-	r = SquareOfSum(100) - SumOfSquares(100);
-	printf("result: %ld\n", r);
-	return 0;
+	return projectEuler(test, run);
 }
