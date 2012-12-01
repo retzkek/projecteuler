@@ -17,5 +17,8 @@ eu016: eu016.c pe.h
 eu020: eu020.c pe.h
 	$(cc) $< $(copts) -lgmp -o $@.bin
 
+eu025: eu025.c pe.h
+	$(cc) $< $(copts) -lgmp -o $@.bin
+
 %: %.c pe.h
 	$(cc) $< $(copts) -o $@.bin
