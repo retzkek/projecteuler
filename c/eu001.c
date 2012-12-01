@@ -15,18 +15,9 @@ int natMult3or5(int max)
 	return result;
 }
 
-bool test()
-{
-	return (natMult3or5(10) == 23);
-}
-
-void run()
-{
-	printf("%d\n",natMult3or5(1000));
-}
-
 int main()
 {
-	return projectEuler(test, run);
+	pe_test_eq(natMult3or5(10), 23, "%d")
+	printf("%d\n",natMult3or5(1000));
 }
 

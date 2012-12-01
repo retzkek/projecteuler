@@ -28,17 +28,8 @@ long SquareOfSum(int max)
 	return sum * sum;
 }
 
-bool test()
-{
-	return (SquareOfSum(10) - SumOfSquares(10) == 2640);
-}
-
-void run()
-{
-	printf("%ld\n", SquareOfSum(100) - SumOfSquares(100));
-}
-
 int main()
 {
-	return projectEuler(test, run);
+	pe_test_eq(SquareOfSum(10) - SumOfSquares(10),  2640l, "%ld");
+	printf("%ld\n", SquareOfSum(100) - SumOfSquares(100));
 }

@@ -44,17 +44,8 @@ int palindrome(int digits)
 	return largest;
 }
 
-bool test()
-{
-	return (palindrome(2) == 9009);
-}
-
-void run()
-{
-	printf("%d\n", palindrome(3));
-}
-
 int main()
 {
-	return projectEuler(test,run);
+	pe_test_eq(palindrome(2), 9009, "%d")
+	printf("%d\n", palindrome(3));
 }

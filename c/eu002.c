@@ -26,17 +26,8 @@ int fibsum(int max)
 	return result;
 }
 
-bool test()
-{
-	return (fibsum(90) == 44);
-}
-
-void run()
-{
-	printf("%d\n", fibsum(4e6));
-}
-
 int main() 
 {
-	return projectEuler(test, run);
+	pe_test_eq(fibsum(90), 44, "%d")
+	printf("%d\n", fibsum(4e6));
 }

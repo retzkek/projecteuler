@@ -28,17 +28,8 @@ int smallestDivisibleBy(int max)
 	return i;
 }
 
-bool test()
-{
-	return (smallestDivisibleBy(10) == 2520);
-}
-
-void run()
-{
-	printf("%d\n", smallestDivisibleBy(20));
-}
-
 int main()
 {
-	return projectEuler(test, run);
+	pe_test_eq(smallestDivisibleBy(10), 2520, "%d");
+	printf("%d\n", smallestDivisibleBy(20));
 }

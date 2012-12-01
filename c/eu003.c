@@ -26,17 +26,8 @@ unsigned long largestPrimeFactor(unsigned long num)
 	return result;
 }
 
-bool test()
-{
-	return (largestPrimeFactor(13195) == 29);
-}
-
-void run()
-{
-	printf("%lu\n", largestPrimeFactor(600851475143));
-}
-
 int main()
 {
-	return projectEuler(test, run);
+	pe_test_eq(largestPrimeFactor(13195), 29ul, "%lu");
+	printf("%lu\n", largestPrimeFactor(600851475143));
 }
