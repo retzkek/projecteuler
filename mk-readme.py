@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2.7
 """
 Assemble list of languages used to solve each problem; create README.rst.
 """
