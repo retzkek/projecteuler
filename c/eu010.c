@@ -8,35 +8,25 @@
 #include "pe.h"
 #include "primes.h"
 
-bool test()
+unsigned long sumPrimes(primes_s *p)
 {
-	primes p;
-	initPrimes(&p);
-	int sum = 5;
-	while (p.last < 10) {
-		sum += nextPrime(&p);
+	unsigned long sum = 0;
+	for (size_t i = 0; i < p->numPrimes; i++) {
+		sum += p->primes[i];
 	}
-	sum -= p.last;
-	free(p.primes);
-	return (sum == 17);
-}
-
-void run()
-{
-	primes p;
-	initPrimes(&p);
-	long sum = 5;
-	while (p.last < 2e6) {
-		sum += nextPrime(&p);
-	}
-	sum -= p.last;
-	free(p.primes);
-	printf("%ld\n",sum);
+	return sum;
 }
 
 int main()
 {
-	return projectEuler(test,run);
+	primes_s *p = primes_new();
+	primes_populate(p, 10);
+	pe_test_eq(sumPrimes(p), 17lu, "%lu");
+
+	primes_populate(p, 2e6);
+	printf("%lu\n",sumPrimes(p));
+
+	primes_free(p);
 }
 
 

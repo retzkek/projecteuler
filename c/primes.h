@@ -2,62 +2,36 @@
 // Kevin Retzke (retzkek@gmail.com)
 // November 2012
 
-#include <stdlib.h>
-#include <stdbool.h>
+#ifndef _PRIMES_H
+#define _PRIMES_H
 
-#define INITIAL_LEN 100
-#define INCREASE_LEN 100
+#include <stdlib.h>
+
+#define PRIMES_SIZE_INCREMENT 100
+
+typedef unsigned int prime_t;
 
 typedef struct {
-	int *primes;
-	int nPrimes;
-	int maxPrimes;
-	int last;
-} primes;
+	prime_t *primes;
+	size_t numPrimes;
+	// housekeeping
+	size_t capacity;
+} primes_s;
 
-void initPrimes(primes *p)
-{
-	p->primes = calloc(INITIAL_LEN,sizeof(int));
-	p->primes[0] = 2;
-	p->primes[1] = 3;
-	p->nPrimes = 2;
-	p->maxPrimes = INITIAL_LEN;
-	p->last = 3;
-}
+// Initialize new primes instance.
+primes_s *primes_new();
 
-void addPrime(primes *p, int prime)
-{
-	if (p->nPrimes+1 > p->maxPrimes) {
-		p->maxPrimes += INCREASE_LEN;
-		p->primes = realloc(p->primes, p->maxPrimes*sizeof(int));
-	}
-	p->primes[p->nPrimes] = prime;
-	p->nPrimes++;
-	p->last = prime;
-}
+// Free primes instance.
+void primes_free(primes_s *p);
 
-int nextPrime(primes *p)
-{
-	int candidate, next;
-	bool isPrime;
-	candidate = p->last + 2;
-	next = 0;
-	while (next == 0) {
-		isPrime = true;
-		for (int i = 0; i < p->nPrimes; i++) {
-			if (candidate % p->primes[i] == 0) {
-				isPrime = false;
-				candidate += 2;
-				break;
-			}
-			if (p->primes[i]*p->primes[i] > candidate) {
-				break;
-			}
-		}
-		if (isPrime) {
-			next = candidate;
-		}
-	}
-	addPrime(p,next);
-	return next;
-}
+// Populate primes instance with all primes up to max (using sieve of 
+// eratosthenes). Returns number of primes found.
+size_t primes_populate(primes_s *p, prime_t max);
+
+// Finds and returns next prime.
+prime_t primes_next(primes_s *p);
+
+// Test if num is prime.
+bool primes_isPrime(primes_s *p, prime_t num);
+
+#endif

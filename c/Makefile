@@ -1,12 +1,15 @@
 cc= gcc
 #cc= clang
-copts=-Wall -pedantic -std=gnu1x -g
+copts=-Wall -pedantic -std=gnu11 -g
+
+primes: primes.c primes.h
+	$(cc) $< $(copts) -c
 
 eu004: eu004.c pe.h
 	$(cc) $< $(copts) -lm -o $@.bin
 
-eu010: eu010.c pe.h primes.h
-	$(cc) $< $(copts) -o $@.bin
+eu010: eu010.c pe.h primes
+	$(cc) $< primes.o $(copts) -o $@.bin
 
 eu015: eu015.c pe.h
 	$(cc) $< $(copts) -lgmp -o $@.bin
