@@ -23,5 +23,8 @@ eu020: eu020.c pe.h
 eu025: eu025.c pe.h
 	$(cc) $< $(copts) -lgmp -o $@.bin
 
+eu041: eu041.c pe.h primes
+	$(cc) $< primes.o $(copts) -o $@.bin
+
 %: %.c pe.h
 	$(cc) $< $(copts) -o $@.bin
