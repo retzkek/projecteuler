@@ -31,17 +31,9 @@ int sumDigitsFac(unsigned long n)
 	return sum;
 }
 
-bool test()
-{
-	return (sumDigitsFac(10) == 27);
-}
-
-void run()
-{
-	printf("%d\n",sumDigitsFac(100));
-}
-
 int main()
 {
-	return projectEuler(test,run);
+	pe_test_eq(sumDigitsFac(10), 27, "%d");
+
+	printf("%d\n",sumDigitsFac(100));
 }
