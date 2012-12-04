@@ -1,5 +1,4 @@
 // project euler (projecteuler.net) problem 67
-// (same as problem 18 with different input)
 // solution by Kevin Retzke (retzkek@gmail.com)
 // November 2012
 
@@ -83,25 +82,16 @@ int maxPathSum(triangle *t) {
 	return r;
 }
 
-bool test()
+int main()
 {
 	triangle *t;
-	t = readTriangleFromFile("../data/eu018test.dat",4);
-	int r = maxPathSum(t);
-	cleanTriangle(t);
-	return (r == 23);
-}
 
-void run()
-{
-	triangle *t;
+	t = readTriangleFromFile("../data/eu018test.dat",4);
+	pe_test_eq(maxPathSum(t), 23, "%d");
+	cleanTriangle(t);
+
 	t = readTriangleFromFile("../data/eu067.dat",100);
 	//printTriangle(t);
 	printf("%d\n",maxPathSum(t));
 	cleanTriangle(t);
-}
-
-int main()
-{
-	return projectEuler(test,run);
 }
