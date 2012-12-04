@@ -82,25 +82,16 @@ int maxPathSum(triangle *t) {
 	return r;
 }
 
-bool test()
+int main()
 {
 	triangle *t;
-	t = readTriangleFromFile("../data/eu018test.dat",4);
-	int r = maxPathSum(t);
-	cleanTriangle(t);
-	return (r == 23);
-}
 
-void run()
-{
-	triangle *t;
+	t = readTriangleFromFile("../data/eu018test.dat",4);
+	pe_test_eq(maxPathSum(t), 23, "%d");
+	cleanTriangle(t);
+
 	t = readTriangleFromFile("../data/eu018.dat",15);
 	//printTriangle(t);
 	printf("%d\n",maxPathSum(t));
 	cleanTriangle(t);
-}
-
-int main()
-{
-	return projectEuler(test,run);
 }
