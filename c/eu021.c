@@ -24,14 +24,11 @@ int sumProperDivisors(int n)
 	return sum;
 }
 
-bool test()
+int main()
 {
-	return (sumProperDivisors(220) == 284 &&
-			sumProperDivisors(284) == 220);
-}
+	pe_test_eq(sumProperDivisors(220), 284, "%d");
+	pe_test_eq(sumProperDivisors(284), 220, "%d");
 
-void run()
-{
 	static const int max_n = 10000;
 	int sums[max_n];
 	int sum;
@@ -47,9 +44,4 @@ void run()
 		}
 	}
 	printf("%d\n",sum);
-}
-
-int main()
-{
-	return projectEuler(test,run);
 }
