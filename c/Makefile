@@ -1,6 +1,6 @@
 cc= gcc
 #cc= clang
-copts=-Wall -pedantic -std=gnu11 -g
+copts=-Wall -pedantic -std=gnu11 -g -O3
 
 primes: primes.c primes.h
 	$(cc) $< $(copts) -c

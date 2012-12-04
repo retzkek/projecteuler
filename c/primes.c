@@ -3,6 +3,7 @@
 // November 2012
 
 #include <stdbool.h>
+#include <string.h>
 
 #include "primes.h"
 
@@ -17,15 +18,19 @@ static void primes_add(primes_s *p, prime_t prime)
 	p->numPrimes++;
 }
 
+static void primes_init(primes_s *p)
+{
+	p->primes = calloc(PRIMES_SIZE_INCREMENT, sizeof(prime_t));
+	p->capacity = PRIMES_SIZE_INCREMENT;
+	p->primes[0] = 2;
+	p->numPrimes = 1;
+}
+
 // public methods
 primes_s *primes_new()
 {
 	primes_s *p = malloc(sizeof(primes_s));
-	p->primes = calloc(PRIMES_SIZE_INCREMENT, sizeof(prime_t));
-	p->capacity = PRIMES_SIZE_INCREMENT;
-	p->primes[0] = 2;
-	p->primes[1] = 3;
-	p->numPrimes = 2;
+	primes_init(p);
 	return p;
 }
 
@@ -37,24 +42,32 @@ void primes_free(primes_s *p)
 
 size_t primes_populate(primes_s *p, prime_t max)
 {
-	bool sieve[max];
-	for (prime_t i = 0; i < max; i++) {
-		sieve[i] = false;
+	if (p->primes) {
+		free(p->primes);
+		primes_init(p);
 	}
-	for (size_t i = 2; i*i < max; i++) {
+	size_t slen = max/2+1;
+	// sieve only stores odds, i.e.
+	// index:  0 1 2 3 4  5  6  7  8  9 10 11 12
+	//   num:  0 3 5 7 9 11 13 15 17 19 21 23 25
+	bool *sieve = malloc(slen*sizeof(bool));
+	memset(sieve, 0, slen*sizeof(bool));
+	for (size_t i = 1; i < slen; i++) {
 		if (!sieve[i]) {
-			for (size_t j = 2*i; j < max; j += i) {
+			size_t inc = 2*i+1;
+			for (size_t j = 3*i+1; j < slen; j += inc) {
 				sieve[j] = true;
 			}
 		}
 	}
 	size_t numAdded = 0;
-	for (size_t i = p->primes[p->numPrimes-1]+2; i < max; i++) {
+	for (size_t i = 1; i < slen; i++) {
 		if (!sieve[i]) {
-			primes_add(p, (prime_t)i);
+			primes_add(p, (prime_t)(2*i+1));
 			numAdded++;
 		}
 	}
+	free(sieve);
 	return numAdded;
 }
 
@@ -85,7 +98,6 @@ prime_t primes_next(primes_s *p)
 
 bool primes_isPrime(primes_s *p, prime_t num)
 {
-	// naive add
 	while (p->primes[p->numPrimes-1] < num) {
 		primes_next(p);
 	}

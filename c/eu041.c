@@ -39,7 +39,7 @@ bool isPandigital(unsigned int num)
 int main()
 {
 	primes_s *p = primes_new();
-	printf("%lu\n",primes_populate(p, 987654321));
+	primes_populate(p, 987654321);
 
 	pe_test_eq(primes_isPrime(p,2143), true, "%d");
 	pe_test_eq(isPandigital(2143), true, "%d");
