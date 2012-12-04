@@ -18,7 +18,7 @@ char *numToWords(unsigned int num)
 		"fourteen","fifteen","sixteen","seventeen","eighteen","nineteen"};
 	static char *tens[] = {"zero","ten","twenty","thirty","forty",
 		"fifty","sixty","seventy","eighty","ninety"};
-	char *str0, *str1, *str2;
+	char *str0 = NULL, *str1 = NULL, *str2 = NULL;
 	if (num < 20) {
 		asprintf(&str0,"%s",digits[num]);
 	} else if (num < 100) {
@@ -64,27 +64,18 @@ int countLetters(char *str)
 	return c;
 }
 
-bool test()
+int main()
 {
 	char *str;
-	bool pass = true;
 
 	str = numToWords(342);
-	if (countLetters(str) != 23)
-		pass = false;
+	pe_test_eq(countLetters(str), 23, "%d")
 	free(str);
 
 	str = numToWords(115);
-	if (countLetters(str) != 20)
-		pass = false;
+	pe_test_eq(countLetters(str), 20, "%d")
 	free(str);
 
-	return pass;
-}
-
-void run()
-{
-	char *str;
 	int cnt = 0;
 	for (int i = 1; i <= 1000; i++) {
 		str = numToWords(i);
@@ -92,9 +83,4 @@ void run()
 		free(str);
 	}
 	printf("%d\n",cnt);
-}
-
-int main()
-{
-	return projectEuler(test,run);
 }
