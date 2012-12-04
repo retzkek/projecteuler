@@ -39,7 +39,7 @@ void printArray()
 	}
 }
 
-void run()
+int main()
 {
 	int r, p, idx;
 	r = 0;
@@ -92,10 +92,4 @@ void run()
 		}
 	}
     printf("%d\n",r);
-}
-
-int main()
-{
-	//printArray();
-	return projectEuler(NULL,run);
 }
