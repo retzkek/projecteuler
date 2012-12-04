@@ -30,17 +30,8 @@ unsigned long paths(unsigned int n)
 	return mpz_get_ui(r);
 }
 
-bool test()
-{
-	return (paths(2) == 6);
-}
-
-void run()
-{
-	printf("%lu\n",paths(20));
-}
-
 int main()
 {
-	return projectEuler(test,run);
+	pe_test_eq(paths(2), 6lu, "%lu");
+	printf("%lu\n",paths(20));
 }
