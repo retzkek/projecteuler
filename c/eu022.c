@@ -143,17 +143,14 @@ int sumCharacterValues(char *str)
 	return sum;
 }
 
-bool test()
+int main()
 {
-	return (sumCharacterValues("COLIN") == 53);
-}
+	pe_test_eq(sumCharacterValues("COLIN"), 53, "%d");
 
-void run()
-{
 	names_t *n;
 	n = readNamesFromFile("../data/names_formatted.txt");
 	if (n == NULL) {
-		return;
+		return 1;
 	}
 	sortNames(n);
 	//printNames(n);
@@ -163,9 +160,4 @@ void run()
 	}
 	printf("%lu\n",sum);
 	cleanNames(n);
-}
-
-int main()
-{
-	return projectEuler(test, run);
 }
