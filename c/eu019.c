@@ -9,7 +9,7 @@
 
 static int daysInMonth[] = {31,28,31,30,31,30,31,31,30,31,30,31};
 
-void run()
+int main()
 {
 	int d, n;
 	d = 1;
@@ -30,9 +30,4 @@ void run()
 		}
 	}
 	printf("%d\n",n);
-}
-
-int main()
-{
-	return projectEuler(NULL,run);
 }
