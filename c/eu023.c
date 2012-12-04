@@ -5,6 +5,8 @@
 #include <stdio.h>
 #include <stdbool.h>
 
+#include "pe.h"
+
 ////////////////////////////////////////////////////////////////////////////////
 // Utility                                                                    //
 ////////////////////////////////////////////////////////////////////////////////
@@ -31,12 +33,7 @@ sumProperDivisors(int n)
 int
 main()
 {
-	// test that 28 is perfect number
-	int s = sumProperDivisors(28);
-	if (s != 28) {
-		printf("Error. sumProperDivisors(28) = %d, expecting 28.\n",s);
-		return 1;
-	}
+	pe_test_eq(sumProperDivisors(28), 28, "%d");
 	// problem
     // use a very simple hash-like table to keep track of abundant numbers
     // since the problem told us the maximum value we need to worry about,
