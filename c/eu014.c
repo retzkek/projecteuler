@@ -39,15 +39,13 @@ int count(int n)
 	return i;
 }
 
-bool test()
+int main()
 {
-	return (count(13) == 10);
-}
+	memset(&countn[0], 0, MAX_N);
+	pe_test_eq(count(13), 10, "%d");
 
-void run()
-{
 	long m, max;
-	int imax;
+	int imax = 0;
 	max = 0;
 	for (int i = 1; i < MAX_N; i++) {
 		m = count(i);
@@ -57,10 +55,4 @@ void run()
 		}
 	}
 	printf("%d\n",imax);
-}
-
-int main()
-{
-	memset(&countn[0], 0, MAX_N);
-	return projectEuler(test,run);
 }
