@@ -122,7 +122,7 @@ main()
 	FILE *f;
 	const size_t len = 52; // length of numbers+2 for trailing \n\0
 	char line[len];
-	f = fopen("eu013.dat","r");
+	f = fopen("../data/eu013.dat","r");
 	if (f == NULL) {
 		return 1;
 	}
