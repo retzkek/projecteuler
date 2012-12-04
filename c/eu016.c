@@ -31,17 +31,8 @@ int sumDigitsPow(unsigned long base, unsigned long exp)
 }
 
 
-bool test()
-{
-	return (sumDigitsPow(2,15) == 26);
-}
-
-void run()
-{
-	printf("%d\n",sumDigitsPow(2,1000));
-}
-
 int main()
 {
-	return projectEuler(test,run);
+	pe_test_eq(sumDigitsPow(2,15), 26, "%d");
+	printf("%d\n",sumDigitsPow(2,1000));
 }
