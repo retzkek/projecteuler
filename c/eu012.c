@@ -43,17 +43,10 @@ int firstOverNFactors(int n)
 	return t;
 }
 
-bool test()
-{
-	return (triangle(7) == 28 && firstOverNFactors(5) == 28);
-}
-
-void run()
-{
-	printf("%d\n",firstOverNFactors(500));
-}
-
 int main()
 {
-	return projectEuler(test,run);
+	pe_test_eq(triangle(7), 28, "%d");
+	pe_test_eq(firstOverNFactors(5), 28, "%d");
+
+	printf("%d\n",firstOverNFactors(500));
 }
