@@ -13,7 +13,7 @@
  * (3) a < b < c
 */
 
-void run()
+int main()
 {
 	int n, a, b, c;
 	bool found;
@@ -32,9 +32,4 @@ void run()
 		}
 	}
     printf("%d\n",a*b*c);
-}
-
-int main()
-{
-	return projectEuler(NULL,run);
 }
