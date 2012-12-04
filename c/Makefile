@@ -5,6 +5,9 @@ copts=-Wall -pedantic -std=gnu11 -g -O3
 primes: primes.c primes.h
 	$(cc) $< $(copts) -c
 
+primes_test: primes_test.c primes
+	$(cc) $< primes.o $(copts) -o $@.bin
+
 eu004: eu004.c pe.h
 	$(cc) $< $(copts) -lm -o $@.bin
 

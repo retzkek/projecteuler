@@ -101,12 +101,20 @@ bool primes_isPrime(primes_s *p, prime_t num)
 	while (p->primes[p->numPrimes-1] < num) {
 		primes_next(p);
 	}
-	// naive search
+	// binary search
+	size_t imin = 0;
+	size_t imax = p->numPrimes-1;
 	bool isPrime = false;
-	for (size_t i = 0; i < p->numPrimes; i++) {
+	while (imax-imin > 1) {
+		size_t i = (imin+imax)/2;
 		if (p->primes[i] == num) {
 			isPrime = true;
 			break;
+		}
+		if (p->primes[i] > num) {
+			imax = i;
+		} else {
+			imin = i;
 		}
 	}
 	return isPrime;
