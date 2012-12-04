@@ -58,7 +58,7 @@ int multiplyInts(int *ns, int len)
 	return product;
 }
 
-void run()
+int main()
 {
 	int maxProduct = 0;
 	int p;
@@ -69,9 +69,4 @@ void run()
 		}
 	}
 	printf("%d\n",maxProduct);
-}
-
-int main()
-{
-	return projectEuler(NULL,run);
 }
