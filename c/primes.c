@@ -23,7 +23,8 @@ static void primes_init(primes_s *p)
 	p->primes = calloc(PRIMES_SIZE_INCREMENT, sizeof(prime_t));
 	p->capacity = PRIMES_SIZE_INCREMENT;
 	p->primes[0] = 2;
-	p->numPrimes = 1;
+	p->primes[1] = 3;
+	p->numPrimes = 2;
 }
 
 // public methods
@@ -61,7 +62,8 @@ size_t primes_populate(primes_s *p, prime_t max)
 		}
 	}
 	size_t numAdded = 0;
-	for (size_t i = 1; i < slen; i++) {
+	// start at index 2 since we initialized with 2 and 3
+	for (size_t i = 2; i < slen; i++) {
 		if (!sieve[i]) {
 			primes_add(p, (prime_t)(2*i+1));
 			numAdded++;

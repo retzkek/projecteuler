@@ -11,6 +11,9 @@ primes_test: primes_test.c primes
 eu004: eu004.c pe.h
 	$(cc) $< $(copts) -lm -o $@.bin
 
+eu007: eu007.c pe.h primes
+	$(cc) $< primes.o $(copts) -o $@.bin
+
 eu010: eu010.c pe.h primes
 	$(cc) $< primes.o $(copts) -o $@.bin
 
