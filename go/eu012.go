@@ -5,6 +5,7 @@ package main
 
 import (
 	"fmt"
+	"os"
 )
 
 func triangle(n int) int {
@@ -42,12 +43,12 @@ func firstOverNFactors(n int) int {
 func main() {
 	if triangle(7) != 28 {
 		fmt.Printf("Test failed. triangle(7) = %d (should be 28)\n", triangle(7))
-		return
+		os.Exit(1)
 	}
 	if firstOverNFactors(5) != 28 {
 		fmt.Printf("Test failed. firstOverNFactors(5) = %d (should be 28)\n",
 			firstOverNFactors(5))
-		return
+		os.Exit(1)
 	}
 	fmt.Println(firstOverNFactors(500))
 }
