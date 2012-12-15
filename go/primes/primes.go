@@ -1,10 +1,9 @@
 // Methods for computing prime numbers.
 // Kevin Retzke (retzkek@gmail.com), May 2012
-package main
+package primes
 
 import (
     "math"
-    "fmt"
 )
 
 // Primes is a type for containing a list of primes.
@@ -66,18 +65,35 @@ func (p *Primes) Eratosthenes(max int) {
     }
 }
 
+// IsPrime tests if a number is prime.  Note: you might want to call
+// Eratosthenes() first if testing a learge number to avoid slow 
+// trial division.
+func (p *Primes)  IsPrime(num int) bool {
+	for p.Last < num {
+		p.Next()
+	}
+	// binary search
+	imin := 0
+	imax := len(p.Primes)-1
+	isPrime := false
+	for (imax-imin) > 1 {
+		i := (imin+imax)/2
+		if p.Primes[i] == num {
+			isPrime = true
+			break
+		}
+		if p.Primes[i] > num {
+			imax = i
+		} else {
+			imin = i
+		}
+	}
+	return isPrime
+}
+
+
 // Sundaram populates p with all primes up to max, computed with
 // the Sieve of Sundaram, an improved Sieve of Eratosthenes.
 /*func (p *Primes) Sundaram(max int) {
     sieve := make([]bool, max/2+1)
 }*/
-
-func main() {
-    p := new(Primes)
-    /*p.Init()
-    for p.Last < 1e7 {
-        p.Next()
-    }*/
-    p.Eratosthenes(987654321)
-    fmt.Println(p.Last)
-}
