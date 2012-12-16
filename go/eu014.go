@@ -10,9 +10,9 @@ import (
 
 func seq(n uint) uint {
 	if n%2 == 0 {
-		return n/2
+		return n / 2
 	}
-	return 3*n+1
+	return 3*n + 1
 }
 
 // countToOne returns a closure that will return the length of
@@ -34,11 +34,10 @@ func countToOne() func(uint) uint {
 	}
 }
 
-
 func main() {
 	c := countToOne()
 	if c(13) != 10 {
-		fmt.Printf("Test failed. count(13) = %v (should be 10)\n",c(13))
+		fmt.Printf("Test failed. count(13) = %v (should be 10)\n", c(13))
 		os.Exit(1)
 	}
 
