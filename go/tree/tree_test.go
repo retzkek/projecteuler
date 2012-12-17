@@ -6,12 +6,8 @@ import (
 	"fmt"
 )
 
-func intLt(a, b Item) bool {
-	return a.(int) < b.(int)
-}
-
 func TestInt(t *testing.T) {
-	bt := NewTree(intLt)
+	bt := NewTreeInt()
 	ns := []int{10,20,19,4,102,34}
 	for _,n := range ns {
 		bt.Insert(n)
@@ -37,12 +33,8 @@ func TestInt(t *testing.T) {
 	}
 }
 
-func stringLt(a, b Item) bool {
-	return a.(string) < b.(string)
-}
-
 func TestString(t *testing.T) {
-	bt := NewTree(stringLt)
+	bt := NewTreeString()
 	ss := []string{"foo","bar","baz","fizz","buzz","0xDEADBEEF"}
 	for _,s := range ss {
 		bt.Insert(s)
@@ -71,7 +63,7 @@ func TestString(t *testing.T) {
 }
 
 func ExampleTree_Next() {
-	bt := NewTree(intLt)
+	bt := NewTreeInt()
 	ns := []int{10,20,19,4,102,34}
 	for _,n := range ns {
 		bt.Insert(n)
@@ -89,7 +81,7 @@ func ExampleTree_Next() {
 }
 
 func ExampleTree_Graphviz() {
-	bt := NewTree(intLt)
+	bt := NewTreeInt()
 	ns := []int{10,20,19,4,102,34}
 	for _,n := range ns {
 		bt.Insert(n)

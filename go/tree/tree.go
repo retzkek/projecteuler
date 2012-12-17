@@ -24,6 +24,22 @@ func NewTree(ltFunc CmpFunc) *Tree {
 	return t
 }
 
+// NewTreeInt initializes and returns a new Tree to store ints.
+func NewTreeInt() *Tree {
+	f := func(a, b Item) bool {
+		return a.(int) < b.(int)
+	}
+	return NewTree(f)
+}
+
+// NewTreeString initializes and returns a new Tree to store strings.
+func NewTreeString() *Tree {
+	f := func(a, b Item) bool {
+		return a.(string) < b.(string)
+	}
+	return NewTree(f)
+}
+
 // Insert adds a value to the tree and returns pointer to Node.
 func (t *Tree) Insert(v Item) *Node {
 	t.Count++
