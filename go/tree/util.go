@@ -18,7 +18,7 @@ func (t *Tree) Graphviz(w io.Writer) error {
 	if t.Root == nil {
 		return errors.New("Cannot graph empty tree.")
 	}
-	if t.graphvizNode(w, t.Root) != nil {
+	if err = t.graphvizNode(w, t.Root); err != nil {
 		return err
 	}
 	_, err = fmt.Fprintln(w, "}")

@@ -197,13 +197,18 @@ func (t *Tree) Last() *Node {
 
 // Next returns the node with the next highest value to n.
 func (t *Tree) Next(n *Node) *Node {
-	if m := t.successor(n); m != nil {
+	var m *Node
+	if m = t.successor(n); m != nil {
 		return m
 	}
-	if n.parent != nil {
-		if n.parent.left == n {
-			return n.parent
+	if n.parent == nil {
+		return nil
+	}
+	for m = n; t.lt(m.parent.Item, m.Item); {
+		m = m.parent
+		if m.parent == nil {
+			return nil
 		}
 	}
-	return nil
+	return m.parent
 }
