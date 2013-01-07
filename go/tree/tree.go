@@ -1,4 +1,5 @@
 // Naive binary search tree without balancing.
+//
 // Kevin Retzke, December 2012
 package tree
 
@@ -211,4 +212,20 @@ func (t *Tree) Next(n *Node) *Node {
 		}
 	}
 	return m.parent
+}
+
+// FirstToLast sends all items in order to the returned channel.
+//
+// Note that iteration with First() and Next() is faster (this
+// does the same thing, with the added overhead, but convenience,
+// of channels).
+func (t *Tree) FirstToLast() chan Item {
+	ch := make(chan Item,50)
+	go func() {
+		for n := t.First(); n != nil; n = t.Next(n) {
+			ch <- n.Item
+		}
+		close(ch)
+	}()
+	return ch
 }

@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 	"testing"
+	"math/rand"
 )
 
 func TestInt(t *testing.T) {
@@ -80,6 +81,25 @@ func ExampleTree_Next() {
 	// 102
 }
 
+func ExampleTree_FirstToLast() {
+	bt := NewTreeInt()
+	ns := []int{10, 20, 19, 4, 102, 34}
+	for _, n := range ns {
+		bt.Insert(n)
+	}
+	c := bt.FirstToLast()
+	for i := range c {
+		fmt.Println(i)
+	}
+	// Output:
+	// 4
+	// 10
+	// 19
+	// 20
+	// 34
+	// 102
+}
+
 func ExampleTree_Graphviz() {
 	bt := NewTreeInt()
 	ns := []int{10, 20, 19, 4, 102, 34}
@@ -95,4 +115,31 @@ func ExampleTree_Graphviz() {
 	//	20 -> 102
 	//	102 -> 34
 	// }
+}
+
+func BenchmarkNext(b *testing.B) {
+	b.StopTimer()
+	bt := NewTreeInt()
+	for i := 0; i < b.N; i++ {
+		bt.Insert(rand.Int())
+	}
+	b.StartTimer()
+	var sum int
+	for n := bt.First(); n != nil; n = bt.Next(n) {
+		sum += n.Item.(int)
+	}
+}
+
+func BenchmarkFirstToLast(b *testing.B) {
+	b.StopTimer()
+	bt := NewTreeInt()
+	for i := 0; i < b.N; i++ {
+		bt.Insert(rand.Int())
+	}
+	b.StartTimer()
+	c := bt.FirstToLast()
+	var sum int
+	for i := range c {
+		sum += i.(int)
+	}
 }

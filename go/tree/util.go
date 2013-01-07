@@ -10,6 +10,7 @@ import (
 // the tree. Graph with a command like:
 //
 //     dot FILE.dot -Tpdf -o FILE.pdf
+//
 func (t *Tree) Graphviz(w io.Writer) error {
 	_, err := fmt.Fprintln(w, "digraph {")
 	if err != nil {
