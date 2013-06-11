@@ -1,13 +1,15 @@
 #!/usr/bin/env python2.7
 """
-Assemble list of languages used to solve each problem; create README.rst.
+Assemble list of languages used to solve each problem; create README.md.
 """
 
 import os
 import re
 
-header = """Collection of Project Euler (http://www.projecteuler.net) 
-solutions by Kevin Retzke (retzkek@gmail.com).
+header = """Collection of [Project Euler](http://www.projecteuler.net) 
+solutions by [Kevin Retzke](retzkek@gmail.com).
+
+![Official Progress](http://projecteuler.net/profile/retzkek.png)
 """
 
 footer = """
@@ -41,7 +43,7 @@ def write_readme(problems):
 	# header
 	print header
 	# count by language
-	print 'Number of problems solved by language:'
+	print 'Number of problems solved (or maybe just started) by language:'
 	print
 	lcount = {}
 	for l in lsort:
@@ -50,38 +52,31 @@ def write_readme(problems):
 			if l in ls:
 				count += 1
 		lcount[l]=count
-	print '======== ====='
+	print 'Language |# Problems'
+	print '-------- |----------'
 	for l in sorted(lcount, key=lcount.get, reverse=True):
-		print '%8s %5d' % (l, lcount[l])
-	print '======== ====='
-	print
-	# full table
-	print 'Full list of problem/language:'
+		print '%8s | %5d' % (l, lcount[l])
 	print
 	# table header
-	for i in range(len(langs)+1):
-		print '======= ',
+	print 'Full list of problem/language:'
 	print
-	print 'Problem ',
+	print 'Problem',
 	for l in lsort:
-		print '%7s ' % l,
+		print '| %7s ' % l,
 	print
-	for i in range(len(langs)+1):
-		print '======= ',
+	print '-------',
+	for i in range(len(lsort)):
+		print '| --------',
 	print
 	# table body
 	for p in sorted(problems.keys()):
 		print '%7s' % p,
 		for l in lsort:
 			if l in problems[p]:
-				print '%7s ' % 'X',
+				print '| %7s ' % 'X',
 			else:
-				print '        ',
+				print '|         ',
 		print
-	# table footer
-	for i in range(len(langs)+1):
-		print '======= ',
-	print
 	# footer
 	print footer
 
