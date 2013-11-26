@@ -1,4 +1,4 @@
-#!/usr/bin/clojure
+#!/usr/bin/clj
 ; Simple front end to run project euler problems and test cases
 ; Problem needs to be in file "euXXX.clj" where XXX is problem #
 ; Needs to define run-test and run-problem.
