@@ -4,7 +4,7 @@
 (defn divisible-by-all?
   "Tests if n is divisible by all ms."
   [n ms]
-  (every? true? (map #(zero? (rem n %)) ms)))
+  (every? zero? (map #(rem n %) ms)))
 
 (defn lowest-divisible-by-all
   "Returns lowest number divisible by all ms."
