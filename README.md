@@ -8,9 +8,9 @@ Number of problems solved (or maybe just started) by language:
 Language |# Problems
 -------- |----------
   Python |    83
-      Go |    37
+      Go |    36
        C |    29
- Clojure |     4
+ Clojure |     8
  Fortran |     2
   Scheme |     2
   Erlang |     1
@@ -23,10 +23,10 @@ Problem |       C  | Clojure  |  Erlang  | Fortran  |      Go  | Haskell  |  Pyt
     001 |       X  |       X  |          |          |       X  |          |       X  |       X 
     002 |       X  |       X  |          |          |       X  |          |       X  |         
     003 |       X  |       X  |          |          |       X  |          |       X  |         
-    004 |       X  |          |          |          |       X  |          |       X  |         
-    005 |       X  |          |          |          |       X  |          |       X  |         
-    006 |       X  |          |          |          |       X  |          |       X  |         
-    007 |       X  |          |          |          |       X  |          |       X  |         
+    004 |       X  |       X  |          |          |       X  |          |       X  |         
+    005 |       X  |       X  |          |          |       X  |          |       X  |         
+    006 |       X  |       X  |          |          |       X  |          |       X  |         
+    007 |       X  |       X  |          |          |       X  |          |       X  |         
     008 |       X  |          |          |          |       X  |          |       X  |         
     009 |       X  |          |          |          |       X  |          |       X  |         
     010 |       X  |          |          |          |       X  |          |       X  |         
@@ -42,7 +42,7 @@ Problem |       C  | Clojure  |  Erlang  | Fortran  |      Go  | Haskell  |  Pyt
     020 |       X  |          |          |          |       X  |          |       X  |         
     021 |       X  |          |          |          |       X  |          |       X  |         
     022 |       X  |          |          |          |       X  |          |       X  |         
-    023 |       X  |          |          |          |       X  |          |       X  |         
+    023 |       X  |          |          |          |          |          |       X  |         
     024 |          |          |          |          |          |          |       X  |         
     025 |       X  |          |          |          |          |          |       X  |         
     026 |          |          |          |          |          |          |       X  |         
