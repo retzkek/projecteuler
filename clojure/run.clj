@@ -4,7 +4,8 @@
 ; Needs to define run-test and run-problem.
 ; TODO:
 ;   Maybe better as macro(s)?
-;   Should probably be using namespaces
+
+(ns kmr.projecteuler)
 
 (def help-str "Usage: run.clj test|run problem-num")
 
@@ -25,8 +26,8 @@
 (defn main
   ([] (println help-str))
   ([_] (println help-str))
-  ([cmd problem] 
-  (cond 
+  ([cmd problem]
+  (cond
     (= cmd "test") (load-test (format "eu%03d" (read-string problem)))
     (= cmd "run") (load-problem (format "eu%03d" (read-string problem)))
     :else (println help-str)))
