@@ -10,7 +10,7 @@ Language |# Problems
   Python |    83
       Go |    36
        C |    29
- Clojure |     8
+ Clojure |    14
  Fortran |     2
   Scheme |     2
   Erlang |     1
@@ -27,23 +27,23 @@ Problem |       C  | Clojure  |  Erlang  | Fortran  |      Go  | Haskell  |  Pyt
     005 |       X  |       X  |          |          |       X  |          |       X  |         
     006 |       X  |       X  |          |          |       X  |          |       X  |         
     007 |       X  |       X  |          |          |       X  |          |       X  |         
-    008 |       X  |          |          |          |       X  |          |       X  |         
-    009 |       X  |          |          |          |       X  |          |       X  |         
-    010 |       X  |          |          |          |       X  |          |       X  |         
+    008 |       X  |       X  |          |          |       X  |          |       X  |         
+    009 |       X  |       X  |          |          |       X  |          |       X  |         
+    010 |       X  |       X  |          |          |       X  |          |       X  |         
     011 |       X  |          |          |          |       X  |          |       X  |         
     012 |       X  |          |          |          |       X  |          |       X  |         
     013 |       X  |          |          |       X  |       X  |          |       X  |         
     014 |       X  |          |          |          |       X  |          |       X  |         
     015 |       X  |          |          |          |       X  |          |       X  |         
     016 |       X  |          |          |          |       X  |          |       X  |         
-    017 |       X  |          |          |          |       X  |          |       X  |         
+    017 |       X  |       X  |          |          |       X  |          |       X  |         
     018 |       X  |          |          |          |       X  |          |       X  |         
     019 |       X  |          |          |          |       X  |          |       X  |         
     020 |       X  |          |          |          |       X  |          |       X  |         
     021 |       X  |          |          |          |       X  |          |       X  |         
-    022 |       X  |          |          |          |       X  |          |       X  |         
+    022 |       X  |       X  |          |          |       X  |          |       X  |         
     023 |       X  |          |          |          |          |          |       X  |         
-    024 |          |          |          |          |          |          |       X  |         
+    024 |          |       X  |          |          |          |          |       X  |         
     025 |       X  |          |          |          |          |          |       X  |         
     026 |          |          |          |          |          |          |       X  |         
     027 |          |          |          |          |          |          |       X  |         
