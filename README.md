@@ -10,7 +10,7 @@ Language |# Problems
   Python |    83
       Go |    36
        C |    29
- Clojure |    14
+ Clojure |    17
  Fortran |     2
   Scheme |     2
   Erlang |     1
@@ -37,7 +37,7 @@ Problem |       C  | Clojure  |  Erlang  | Fortran  |      Go  | Haskell  |  Pyt
     015 |       X  |          |          |          |       X  |          |       X  |         
     016 |       X  |          |          |          |       X  |          |       X  |         
     017 |       X  |       X  |          |          |       X  |          |       X  |         
-    018 |       X  |          |          |          |       X  |          |       X  |         
+    018 |       X  |       X  |          |          |       X  |          |       X  |         
     019 |       X  |          |          |          |       X  |          |       X  |         
     020 |       X  |          |          |          |       X  |          |       X  |         
     021 |       X  |          |          |          |       X  |          |       X  |         
@@ -81,7 +81,7 @@ Problem |       C  | Clojure  |  Erlang  | Fortran  |      Go  | Haskell  |  Pyt
     063 |          |          |          |          |          |          |       X  |         
     065 |          |          |          |          |          |          |       X  |         
     066 |          |          |          |          |       X  |          |       X  |         
-    067 |       X  |          |          |          |       X  |          |       X  |         
+    067 |       X  |       X  |          |          |       X  |          |       X  |         
     069 |          |          |          |          |       X  |          |       X  |         
     070 |          |          |          |          |       X  |          |       X  |         
     075 |          |          |          |          |          |          |       X  |         
