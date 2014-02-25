@@ -15,7 +15,7 @@ end
 exp_r = 2640
 r = square_of_sum(10) - sum_of_squares(10)
 if r != exp_r
-    println("test failed: expected $exp_r, got $r")
+    error("test failed: expected $exp_r, got $r")
 end
 
 # problem

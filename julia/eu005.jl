@@ -24,7 +24,7 @@ end
 exp_r = 2520
 r = divisible_by_all([1:10])
 if r != exp_r
-    println("test failed: expected $exp_r, got $r")
+    error("test failed: expected $exp_r, got $r")
 end
 
 # problem

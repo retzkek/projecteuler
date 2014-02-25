@@ -28,7 +28,7 @@ bases = [3,5]
 exp_r = 23
 r = natmult(10,bases)
 if r != exp_r
-    println("test failed: expected $exp_r, got $r")
+    error("test failed: expected $exp_r, got $r")
 end
 
 # problem

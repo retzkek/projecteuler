@@ -21,7 +21,7 @@ end
 exp_r = 29
 r = largest_prime_factor(13195)
 if r != exp_r
-    println("test failed: expected $exp_r, got $r")
+    error("test failed: expected $exp_r, got $r")
 end
 
 # problem

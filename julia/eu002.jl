@@ -22,7 +22,7 @@ end
 exp_r = 44
 r = fibsum(90)
 if r != exp_r
-    println("test failed: expected $exp_r, got $r")
+    error("test failed: expected $exp_r, got $r")
 end
 
 # problem
