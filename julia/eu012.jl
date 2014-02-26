@@ -4,12 +4,10 @@ triangle(n::Int) = sum(1:n)
 
 function count_factors(n::Int)
     r = 0
-    i = 1
-    while i*i < n
+    for i = 1:int(sqrt(n))
         if n%i == 0
             r += 2
         end
-        i += 1
     end
     r
 end
