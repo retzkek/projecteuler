@@ -11,7 +11,7 @@ Language |# Problems
       Go |    37
        C |    29
  Clojure |    17
-   Julia |    12
+   Julia |    13
   Scheme |     2
  Fortran |     2
  Haskell |     1
@@ -98,6 +98,7 @@ Language |# Problems
 
 ### Problem 012
 [Go](go/eu012.go)
+[Julia](julia/eu012.jl)
 [C](c/eu012.c)
 [Python](python/eu012.py)
 
