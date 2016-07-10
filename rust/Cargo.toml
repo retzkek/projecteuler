@@ -1,0 +1,28 @@
+[package]
+name = "pe"
+version = "0.1.0"
+authors = ["Kevin Retzke <retzkek@gmail.com>"]
+
+[[bin]]
+name = "eu001"
+path = "src/eu001.rs"
+
+[[bin]]
+name = "eu002"
+path = "src/eu002.rs"
+
+[[bin]]
+name = "eu003"
+path = "src/eu003.rs"
+
+[[bin]]
+name = "eu004"
+path = "src/eu004.rs"
+
+[[bin]]
+name = "eu005"
+path = "src/eu005.rs"
+
+[[bin]]
+name = "eu006"
+path = "src/eu006.rs"
