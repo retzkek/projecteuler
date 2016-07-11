@@ -61,11 +61,14 @@ def write_readme(problems):
     print
     # languages by problem
     print '## Full list of language solutions by problem:'
+    print
+    print 'Problem | Languages '
+    print '------- | ------------------------------------------------------------'
     for p in sorted(problems.keys()):
-        print
-        print '### Problem %s' % p
+        print '%7s |'%p,
         for l in problems[p]:
-            print '[%s](%s/eu%s.%s)' % (langs[l], langs[l].lower(), p, l)
+            print '[%s](%s/eu%s.%s)' % (langs[l], langs[l].lower(), p, l),
+        print
     # footer
     print footer
 
