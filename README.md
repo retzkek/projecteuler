@@ -8,10 +8,11 @@ solutions by [Kevin Retzke](mailto:retzkek@gmail.com).
 Language |# Problems
 -------- |----------
   Python |    83
-      Go |    37
+      Go |    36
        C |    29
- Clojure |    17
+ Clojure |    16
    Julia |    14
+    Rust |     7
   Scheme |     2
  Fortran |     2
  Haskell |     1
@@ -23,51 +24,58 @@ Language |# Problems
 [Scheme](scheme/eu001.scm)
 [C](c/eu001.c)
 [Clojure](clojure/eu001.clj)
+[Rust](rust/eu001.rs)
 [Python](python/eu001.py)
 [Julia](julia/eu001.jl)
 [Go](go/eu001.go)
 
 ### Problem 002
-[Go](go/eu002.go)
-[Julia](julia/eu002.jl)
 [C](c/eu002.c)
-[Python](python/eu002.py)
 [Clojure](clojure/eu002.clj)
+[Rust](rust/eu002.rs)
+[Python](python/eu002.py)
+[Julia](julia/eu002.jl)
+[Go](go/eu002.go)
 
 ### Problem 003
-[Go](go/eu003.go)
-[Julia](julia/eu003.jl)
 [C](c/eu003.c)
-[Python](python/eu003.py)
 [Clojure](clojure/eu003.clj)
+[Rust](rust/eu003.rs)
+[Python](python/eu003.py)
+[Julia](julia/eu003.jl)
+[Go](go/eu003.go)
 
 ### Problem 004
-[Go](go/eu004.go)
-[Julia](julia/eu004.jl)
 [C](c/eu004.c)
-[Python](python/eu004.py)
 [Clojure](clojure/eu004.clj)
+[Rust](rust/eu004.rs)
+[Python](python/eu004.py)
+[Julia](julia/eu004.jl)
+[Go](go/eu004.go)
 
 ### Problem 005
-[Go](go/eu005.go)
-[Julia](julia/eu005.jl)
 [C](c/eu005.c)
-[Python](python/eu005.py)
 [Clojure](clojure/eu005.clj)
+[Rust](rust/eu005.rs)
+[Python](python/eu005.py)
+[Julia](julia/eu005.jl)
+[Go](go/eu005.go)
 
 ### Problem 006
-[Go](go/eu006.go)
-[Julia](julia/eu006.jl)
 [C](c/eu006.c)
-[Python](python/eu006.py)
 [Clojure](clojure/eu006.clj)
+[Rust](rust/eu006.rs)
+[Python](python/eu006.py)
+[Julia](julia/eu006.jl)
+[Go](go/eu006.go)
 
 ### Problem 007
-[Go](go/eu007.go)
-[Julia](julia/eu007.jl)
 [C](c/eu007.c)
-[Python](python/eu007.py)
 [Clojure](clojure/eu007.clj)
+[Rust](rust/eu007.rs)
+[Python](python/eu007.py)
+[Julia](julia/eu007.jl)
+[Go](go/eu007.go)
 
 ### Problem 008
 [Go](go/eu008.go)
@@ -140,7 +148,6 @@ Language |# Problems
 [Go](go/eu019.go)
 [C](c/eu019.c)
 [Python](python/eu019.py)
-[Clojure](clojure/eu019.clj)
 
 ### Problem 020
 [Go](go/eu020.go)
@@ -159,7 +166,6 @@ Language |# Problems
 [Clojure](clojure/eu022.clj)
 
 ### Problem 023
-[Go](go/eu023.go)
 [C](c/eu023.c)
 [Python](python/eu023.py)
 
