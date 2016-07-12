@@ -3,12 +3,44 @@ pub struct Primes {
 }
 
 impl Primes {
+    /// Initialize and return new empty Primes struct.
     pub fn new() -> Primes {
         Primes {
-            primes: vec![],
+            primes: Vec::with_capacity(100),
         }
     }
 
+    /// Initialize and return new Primes struct populated
+    /// with all primes below max.
+    pub fn new_to(max: usize) -> Primes {
+        let mut sieve = vec![true;max];
+        let mut i:usize = 2;
+        while i*i < max {
+            if sieve[i] {
+                // i is prime, all multiples of i are not
+                let mut j:usize = 2*i;
+                while j < max {
+                    sieve[j] = false;
+                    j = j+i;
+                }
+            }
+            i = i+1;
+        }
+        // extract primes
+        let maxf = max as f32;
+        let mut p = Primes {
+            primes: Vec::with_capacity((maxf/maxf.log10()) as usize),
+        };
+        for i in 2..max {
+            if sieve[i] {
+                p.primes.push(i as u32);
+            }
+        }
+        p
+
+    }
+
+    /// Calculate and return new prime.
     pub fn next(&mut self) -> u32 {
         let mut i = match self.last() {
             0 => 2,
@@ -31,32 +63,11 @@ impl Primes {
         i
     }
 
+    /// Return last prime calculated.
     pub fn last(&self) -> u32 {
         match self.primes.last() {
             Some(&x) => x,
             _ => 0,
-        }
-    }
-
-    pub fn sieve(&mut self, max: usize) {
-        let mut sieve = vec![true;max];
-        let mut i:usize = 2;
-        while i*i < max {
-            if sieve[i] {
-                // i is prime, all multiples of i are not
-                let mut j:usize = 2*i;
-                while j < max {
-                    sieve[j] = false;
-                    j = j+i;
-                }
-            }
-            i = i+1;
-        }
-        // extract primes
-        for i in 2..max {
-            if sieve[i] {
-                self.primes.push(i as u32);
-            }
         }
     }
 }
@@ -86,9 +97,8 @@ mod test {
     }
 
     #[test]
-    fn sieve() {
-        let mut p = Primes::new();
-        p.sieve(100);
+    fn new_to() {
+        let p = Primes::new_to(100);
         assert_eq!(p.last(),97);
         assert_eq!(p.primes.len(),25);
     }
