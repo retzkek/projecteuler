@@ -5,12 +5,16 @@ pub struct Primes {
 impl Primes {
     pub fn new() -> Primes {
         Primes {
-            primes: vec![2,3],
+            primes: vec![],
         }
     }
 
     pub fn next(&mut self) -> u32 {
-        let mut i = self.last() + 2; 
+        let mut i = match self.last() {
+            0 => 2,
+            2 => 3,
+            _ => self.last() + 2,
+        };
         'candidates: loop {
             'primes: for p in &self.primes {
                 if i%p == 0 {
@@ -21,6 +25,7 @@ impl Primes {
                     break 'candidates;
                 }
             }
+            break;
         }
         self.primes.push(i);
         i
@@ -48,7 +53,7 @@ impl Primes {
             i = i+1;
         }
         // extract primes
-        for i in 5..max {
+        for i in 2..max {
             if sieve[i] {
                 self.primes.push(i as u32);
             }
@@ -63,12 +68,14 @@ mod test {
     #[test]
     fn new() {
         let p = Primes::new();
-        assert_eq!(p.last(),3);
+        assert_eq!(p.last(),0);
     }
 
     #[test]
     fn next() {
         let mut p = Primes::new();
+        assert_eq!(p.next(),2);
+        assert_eq!(p.next(),3);
         assert_eq!(p.next(),5);
         assert_eq!(p.next(),7);
         assert_eq!(p.next(),11);
