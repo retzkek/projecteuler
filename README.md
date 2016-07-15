@@ -12,7 +12,7 @@ Language |# Problems
        C |    29
  Clojure |    16
    Julia |    14
-    Rust |     7
+    Rust |     8
   Scheme |     2
  Fortran |     2
  Haskell |     1
@@ -29,7 +29,7 @@ Problem | Languages
     005 | [C](c/eu005.c) [Clojure](clojure/eu005.clj) [Rust](rust/eu005.rs) [Python](python/eu005.py) [Julia](julia/eu005.jl) [Go](go/eu005.go)
     006 | [C](c/eu006.c) [Clojure](clojure/eu006.clj) [Rust](rust/eu006.rs) [Python](python/eu006.py) [Julia](julia/eu006.jl) [Go](go/eu006.go)
     007 | [C](c/eu007.c) [Clojure](clojure/eu007.clj) [Rust](rust/eu007.rs) [Python](python/eu007.py) [Julia](julia/eu007.jl) [Go](go/eu007.go)
-    008 | [Go](go/eu008.go) [Julia](julia/eu008.jl) [C](c/eu008.c) [Python](python/eu008.py) [Clojure](clojure/eu008.clj)
+    008 | [C](c/eu008.c) [Clojure](clojure/eu008.clj) [Rust](rust/eu008.rs) [Python](python/eu008.py) [Julia](julia/eu008.jl) [Go](go/eu008.go)
     009 | [Go](go/eu009.go) [Julia](julia/eu009.jl) [C](c/eu009.c) [Python](python/eu009.py) [Clojure](clojure/eu009.clj)
     010 | [Go](go/eu010.go) [Julia](julia/eu010.jl) [C](c/eu010.c) [Python](python/eu010.py) [Clojure](clojure/eu010.clj)
     011 | [Go](go/eu011.go) [Julia](julia/eu011.jl) [C](c/eu011.c) [Python](python/eu011.py)
