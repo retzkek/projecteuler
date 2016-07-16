@@ -72,6 +72,15 @@ impl Primes {
     }
 }
 
+impl IntoIterator for Primes {
+    type Item = u32;
+    type IntoIter = ::std::vec::IntoIter<u32>;
+
+    fn into_iter(self) -> Self::IntoIter {
+        self.primes.into_iter()
+    }
+}
+
 #[cfg(test)]
 mod test {
     use super::Primes;
@@ -101,5 +110,15 @@ mod test {
         let p = Primes::new_to(100);
         assert_eq!(p.last(),97);
         assert_eq!(p.primes.len(),25);
+    }
+
+    #[test]
+    fn into_iter() {
+        let p = Primes::new_to(10);
+        let mut sum:u32 = 0;
+        for n in p {
+            sum = sum + n;
+        }
+        assert_eq!(sum,17);
     }
 }
