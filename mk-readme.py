@@ -54,21 +54,21 @@ def write_readme(problems):
             if l in ls:
                 count += 1
         lcount[l]=count
-    print 'Language |# Problems'
-    print '-------- |----------'
+    print '| Language | # Problems |'
+    print '| -------- | ---------- |'
     for l in sorted(lcount, key=lcount.get, reverse=True):
-        print '%8s | %5d' % (langs[l], lcount[l])
+        print '| %8s | %5d |' % (langs[l], lcount[l])
     print
     # languages by problem
     print '## Full list of language solutions by problem:'
     print
-    print 'Problem | Languages '
-    print '------- | ------------------------------------------------------------'
+    print '| Problem | Languages                                                    |'
+    print '| ------- | ------------------------------------------------------------ |'
     for p in sorted(problems.keys()):
-        print '%7s |'%p,
+        print '| %7s |'%p,
         for l in problems[p]:
             print '[%s](%s/eu%s.%s)' % (langs[l], langs[l].lower(), p, l),
-        print
+        print ' |'
     # footer
     print footer
 
