@@ -8,9 +8,9 @@ use std::fs::File;
 
 
 fn sum_numbers_from_file(filename:&str) -> Result<BigInt, io::Error> {
-    let mut f = try!(File::open(filename));
+    let mut f = File::open(filename)?;
     let mut s = String::new();
-    try!(f.read_to_string(&mut s));
+    f.read_to_string(&mut s)?;
     let mut n = BigInt::new();
     for line in s.lines() {
         let m = BigInt::new_from_string(line);
