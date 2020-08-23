@@ -3,9 +3,9 @@ use std::io::prelude::*;
 use std::fs::File;
 
 fn max_product_five(filename:&str) -> Result<u32, io::Error> {
-    let mut f = try!(File::open(filename));
+    let mut f = File::open(filename)?;
     let mut s = Vec::new();
-    try!(f.read_to_end(&mut s));
+    f.read_to_end(&mut s)?;
     // convert to vector of digits and throw away non-digit chars
     let ns: Vec<_> = s.iter()
         .filter_map(|c| (*c as char).to_digit(10))

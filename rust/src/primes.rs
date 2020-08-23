@@ -48,7 +48,7 @@ impl Primes {
             _ => self.last() + 2,
         };
         'candidates: loop {
-            'primes: for p in &self.primes {
+            for p in &self.primes {
                 if i%p == 0 {
                     i = i+2;
                     continue 'candidates;
