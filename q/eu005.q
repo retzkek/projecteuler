@@ -4,4 +4,4 @@
 
 / What is the smallest number that is evenly divisible by all of the
 / numbers from 1 to 20?
-{not 0=(|/)x mod ns}inc/20
+{not 0=(|/)x mod ns}{x+20}/20
