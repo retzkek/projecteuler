@@ -15,7 +15,7 @@ solutions by [Kevin Retzke](mailto:retzkek@gmail.com).
 footer = """
 """
 
-subdirs = ['c','go','misc','python','clojure','julia','rust/src/bin']
+subdirs = ['c','go','misc','python','clojure','julia','rust/src/bin','zig']
 #        ext  : language
 langs = {'c'  : 'C', 
          'go' : 'Go',
@@ -27,6 +27,7 @@ langs = {'c'  : 'C',
          'clj': 'Clojure',
          'jl' : 'Julia',
          'rs' : 'Rust',
+         'zig': 'Zig',
 }
 
 def parse_filename(f):

@@ -12,17 +12,18 @@ solutions by [Kevin Retzke](mailto:retzkek@gmail.com).
 |        C |    29 |
 |  Clojure |    16 |
 |    Julia |    14 |
-|     Rust |    11 |
+|     Rust |    10 |
 |   Scheme |     2 |
 |  Fortran |     2 |
 |  Haskell |     1 |
+|      Zig |     1 |
 |   Erlang |     1 |
 
 ## Full list of language solutions by problem:
 
 | Problem | Languages                                                    |
 | ------- | ------------------------------------------------------------ |
-|     001 | [Scheme](scheme/eu001.scm) [C](c/eu001.c) [Clojure](clojure/eu001.clj) [Rust](rust/eu001.rs) [Python](python/eu001.py) [Julia](julia/eu001.jl) [Go](go/eu001.go)  |
+|     001 | [Scheme](scheme/eu001.scm) [C](c/eu001.c) [Clojure](clojure/eu001.clj) [Rust](rust/eu001.rs) [Python](python/eu001.py) [Julia](julia/eu001.jl) [Zig](zig/eu001.zig) [Go](go/eu001.go)  |
 |     002 | [C](c/eu002.c) [Clojure](clojure/eu002.clj) [Rust](rust/eu002.rs) [Python](python/eu002.py) [Julia](julia/eu002.jl) [Go](go/eu002.go)  |
 |     003 | [C](c/eu003.c) [Clojure](clojure/eu003.clj) [Rust](rust/eu003.rs) [Python](python/eu003.py) [Julia](julia/eu003.jl) [Go](go/eu003.go)  |
 |     004 | [C](c/eu004.c) [Clojure](clojure/eu004.clj) [Rust](rust/eu004.rs) [Python](python/eu004.py) [Julia](julia/eu004.jl) [Go](go/eu004.go)  |
@@ -45,7 +46,7 @@ solutions by [Kevin Retzke](mailto:retzkek@gmail.com).
 |     021 | [Go](go/eu021.go) [C](c/eu021.c) [Python](python/eu021.py)  |
 |     022 | [Go](go/eu022.go) [C](c/eu022.c) [Python](python/eu022.py) [Clojure](clojure/eu022.clj)  |
 |     023 | [C](c/eu023.c) [Python](python/eu023.py)  |
-|     024 | [Python](python/eu024.py) [Clojure](clojure/eu024.clj) [Rust](rust/eu024.rs)  |
+|     024 | [Python](python/eu024.py) [Clojure](clojure/eu024.clj)  |
 |     025 | [Julia](julia/eu025.jl) [C](c/eu025.c) [Python](python/eu025.py)  |
 |     026 | [Python](python/eu026.py)  |
 |     027 | [Python](python/eu027.py)  |
