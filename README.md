@@ -13,8 +13,8 @@ solutions by [Kevin Retzke](mailto:retzkek@gmail.com).
 |  Clojure |    16 |
 |    Julia |    14 |
 |     Rust |    10 |
+|      Zig |     3 |
 |   Scheme |     2 |
-|      Zig |     2 |
 |  Fortran |     2 |
 |  Haskell |     1 |
 |   Erlang |     1 |
@@ -25,7 +25,7 @@ solutions by [Kevin Retzke](mailto:retzkek@gmail.com).
 | ------- | ------------------------------------------------------------ |
 |     001 | [Scheme](scheme/eu001.scm) [C](c/eu001.c) [Clojure](clojure/eu001.clj) [Rust](rust/eu001.rs) [Python](python/eu001.py) [Julia](julia/eu001.jl) [Zig](zig/eu001.zig) [Go](go/eu001.go)  |
 |     002 | [C](c/eu002.c) [Clojure](clojure/eu002.clj) [Rust](rust/eu002.rs) [Python](python/eu002.py) [Julia](julia/eu002.jl) [Zig](zig/eu002.zig) [Go](go/eu002.go)  |
-|     003 | [C](c/eu003.c) [Clojure](clojure/eu003.clj) [Rust](rust/eu003.rs) [Python](python/eu003.py) [Julia](julia/eu003.jl) [Go](go/eu003.go)  |
+|     003 | [C](c/eu003.c) [Clojure](clojure/eu003.clj) [Rust](rust/eu003.rs) [Python](python/eu003.py) [Julia](julia/eu003.jl) [Zig](zig/eu003.zig) [Go](go/eu003.go)  |
 |     004 | [C](c/eu004.c) [Clojure](clojure/eu004.clj) [Rust](rust/eu004.rs) [Python](python/eu004.py) [Julia](julia/eu004.jl) [Go](go/eu004.go)  |
 |     005 | [C](c/eu005.c) [Clojure](clojure/eu005.clj) [Rust](rust/eu005.rs) [Python](python/eu005.py) [Julia](julia/eu005.jl) [Go](go/eu005.go)  |
 |     006 | [C](c/eu006.c) [Clojure](clojure/eu006.clj) [Rust](rust/eu006.rs) [Python](python/eu006.py) [Julia](julia/eu006.jl) [Go](go/eu006.go)  |
