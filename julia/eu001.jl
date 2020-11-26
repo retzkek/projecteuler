@@ -1,4 +1,5 @@
 #!/usr/bin/env julia
+using Test
 
 # multiple determines if n is a multiple of any of the bases.
 function multiple(n::Int, bases::Vector{Int})
@@ -24,12 +25,7 @@ end
 
 bases = [3,5]
 
-# test case
-exp_r = 23
-r = natmult(10,bases)
-if r != exp_r
-    error("test failed: expected $exp_r, got $r")
-end
+@test natmult(10,bases) == 23
 
 # problem
 println(natmult(1000,bases))

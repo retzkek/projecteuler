@@ -17,12 +17,8 @@ function largest_prime_factor(n::Int)
     r
 end
 
-# test case
-exp_r = 29
-r = largest_prime_factor(13195)
-if r != exp_r
-    error("test failed: expected $exp_r, got $r")
-end
+using Test
+@test largest_prime_factor(13195) == 29
 
 # problem
 println(largest_prime_factor(600851475143))

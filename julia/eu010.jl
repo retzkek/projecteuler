@@ -2,14 +2,9 @@
 
 include("primes.jl")
 
-
-# test case
-exp_r = 17
+using Test
 Primes.eratos(10)
-r = sum(Primes.primes)
-if r != exp_r
-    error("test failed: expected $exp_r, got $r")
-end
+@test sum(Primes.primes)==17
 
 # problem
 Primes.eratos(2000000)

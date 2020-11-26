@@ -23,12 +23,8 @@ function palindrome(d::Int)
     largest
 end
 
-# test case
-exp_r = 9009
-r = palindrome(2)
-if r != exp_r
-    error("test failed: expected $exp_r, got $r")
-end
+using Test
+@test palindrome(2) == 9009
 
 # problem
 println(palindrome(3))

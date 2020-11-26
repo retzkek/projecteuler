@@ -2,6 +2,6 @@
 
 f = open("../data/eu013.dat")
 
-nums = map(BigInt, readlines(f))
+nums = map(x -> parse(BigInt,x), readlines(f))
 
 println(string(sum(nums))[1:10])

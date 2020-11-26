@@ -20,13 +20,8 @@ function divisible_by_all(ns::Array{Int})
     return i
 end
 
-# test case
-exp_r = 2520
-r = divisible_by_all([1:10])
-if r != exp_r
-    error("test failed: expected $exp_r, got $r")
-end
+using Test
+@test divisible_by_all(collect(1:10)) == 2520
 
 # problem
-println(divisible_by_all([1:20]))
-
+println(divisible_by_all(collect(1:20)))

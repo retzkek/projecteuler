@@ -22,10 +22,13 @@ num = string(
       "05886116467109405077541002256983155200055935729725",
       "71636269561882670428252483600823257530420752963450")
 
-r = 0
-nums = collect(num)
-for i = 1:length(nums)-4
-    s = mapreduce(c -> int(c)-int('0'), *, nums[i:i+4])
-    r = s > r ? s : r
+function main()
+    r = 0
+      nums = collect(num)
+      for i = 1:length(nums)-4
+      s = mapreduce(c -> Int(c)-Int('0'), *, nums[i:i+4])
+      r = s > r ? s : r
+      end
+    r
 end
-println(r)
+println(main())

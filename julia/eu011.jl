@@ -40,13 +40,16 @@ max_prod_up(a::Array{Int,2}) = reduce(*, a[size(a,1):size(a,1)-1:end-1])
 max_prod(a::Array{Int,2}) = max(max_prod_rows(a), max_prod_cols(a),
                                 max_prod_down(a), max_prod_up(a))
 
-# process array in 4x4 sub-arrays
-r = 0
-for i = 1:size(arr,1)-3
-    for j = 1:size(arr,2)-3
-        p = max_prod(arr[i:i+3, j:j+3])
-        r = p > r ? p : r
+function main()
+    # process array in 4x4 sub-arrays
+    r = 0
+    for i = 1:size(arr,1)-3
+        for j = 1:size(arr,2)-3
+            p = max_prod(arr[i:i+3, j:j+3])
+            r = p > r ? p : r
+        end
     end
+    r
 end
-println(r)
 
+println(main())

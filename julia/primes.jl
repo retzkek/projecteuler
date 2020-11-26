@@ -2,7 +2,7 @@ module Primes
 
 export primes, next_prime, is_prime, eratos
 
-primes = Set(2,3)
+primes = Set(2:3)
 
 # returns next prime using trial division and adds it to primes
 function next_prime()
@@ -36,7 +36,7 @@ end
 # returns number of primes found.
 function eratos(n::Int)
     sieve = falses(n)
-    for i = 2:int(sqrt(n))
+    for i = 2:Int(ceil(sqrt(n)))
         if !sieve[i]
             for j = 2*i:i:n
                 sieve[j] = true

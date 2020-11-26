@@ -18,12 +18,8 @@ function fibsum(n::Int)
     r
 end
 
-# test case
-exp_r = 44
-r = fibsum(90)
-if r != exp_r
-    error("test failed: expected $exp_r, got $r")
-end
+using Test
+@test fibsum(90) == 44
 
 # problem
 println(fibsum(4000000))
